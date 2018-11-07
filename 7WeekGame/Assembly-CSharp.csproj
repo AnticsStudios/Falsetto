@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\CameraLerpToTransform.cs" />
     <Compile Include="Assets\Scripts\SoyBoyController.cs" />
+    <None Include="Assets\Image Assets (Frank)\Effect\is.sianimator.txt" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/clandry/Documents/Sound-Project/7WeekGame/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
