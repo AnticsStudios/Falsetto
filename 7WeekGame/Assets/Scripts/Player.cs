@@ -41,17 +41,26 @@ public class Player : MonoBehaviour {
             {
                 if (hit.collider.gameObject.tag == "Glass1")
                 {
-                    if()
+                    if (pitchArray[0] == 1)
+                    {
+                        Glass1.GetComponent<Glass>().Shatter();
+                    }
                 }
 
                 else if (hit.collider.gameObject.tag == "Glass2")
                 {
-
+                    if (pitchArray[0] == 1)
+                    {
+                        Glass1.GetComponent<Glass>().Shatter();
+                    }
                 }
 
                 if (hit.collider.gameObject.tag == "Glass3")
                 {
-
+                    if (pitchArray[0] == 1)
+                    {
+                        Glass1.GetComponent<Glass>().Shatter();
+                    }
                 }
 
             }
