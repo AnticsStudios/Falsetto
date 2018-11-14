@@ -1,0 +1,9 @@
+diff a/7WeekGame/Assembly-CSharp.csproj b/7WeekGame/Assembly-CSharp.csproj	(rejected hunks)
+@@ -66,6 +66,7 @@
+     <Compile Include="Assets\Scripts\Player.cs" />
+     <Compile Include="Assets\Scripts\SoyBoyController.cs" />
+     <Reference Include="UnityEditor.StandardEvents">
++      <HintPath>D:/School shit/Semester 3/GAME302/Falsetto/7WeekGame/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.TextMeshPro.Editor">
+       <HintPath>D:/School shit/Semester 3/GAME302/Falsetto/7WeekGame/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
