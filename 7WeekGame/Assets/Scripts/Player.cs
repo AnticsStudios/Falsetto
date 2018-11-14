@@ -6,37 +6,43 @@ public class Player : MonoBehaviour
 {
 
     public bool isdDead;
-    public int[] soundPitch;
+    public int[] pitchArray;
 
     //Glass checks for walls
-    private Glass Glass1;
-    private Glass Glass2;
-    private Glass Glass3;
+    Glass Glass1;
+    Glass Glass2;
+    Glass Glass3;
+
+    //called when the player dies
+    public void Deaderino()
+    {
+        isdDead = true;
+    }
 
     // Use this for initialization
     void Start()
     {
        
         //Array to contain each value of the sound pitch to break different thicknesses of glass
-        soundPitch = new int[3];
+        pitchArray = new int[3];
 
-        soundPitch[0] = 1;
-        soundPitch[1] = 2;
-        soundPitch[2] = 3;
+        pitchArray[0] = 1;
+        pitchArray[1] = 2;
+        pitchArray[2] = 3;
     }
 
     // Update is called once per frame
     void Update()
     {   
         //Casts a ray
-        RaycastHit2D hit = Physics2D.Raycast(Glass.position, Vector2.right);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right);
 
         //If the ray hits something
         if (hit.collider != null)
         {
-            float distance = Mathf.Abs(hit.point.x - Glass.position.x);
+            float distance = Mathf.Abs(hit.point.x - transform.position.x);
             
-            //If the distance is lower than 10 then it checks the tag and compare it with the soundPitch
+            //If the distance is lower than 10 then it checks the tag and compare it with the pitchArray
             //If it matches, then it calls the function to break the glass wall
             if(distance < 10)
             {
@@ -66,9 +72,5 @@ public class Player : MonoBehaviour
         }
     }
 
-    //called when the player dies
-    public void Deaderino()
-    {
-
-    }
+  
 }
