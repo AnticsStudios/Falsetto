@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\Bomb.cs" />
     <Compile Include="Assets\Scripts\CameraLerpToTransform.cs" />
     <Compile Include="Assets\Scripts\Glass.cs" />
+    <Compile Include="Assets\Scripts\LoadSceneScript.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\ScrollingBackground.cs" />
     <Compile Include="Assets\Scripts\SoundManager.cs" />
