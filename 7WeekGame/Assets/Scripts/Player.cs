@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour {
+public class Player : MonoBehaviour
+{
 
     public bool isdDead;
     public int[] pitchArray;
@@ -66,5 +67,11 @@ public class Player : MonoBehaviour {
             }
 
         }
+    }
+
+    //called when the player dies
+    public void Deaderino()
+    {
+
     }
 }
