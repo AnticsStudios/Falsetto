@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\Glass.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\ScrollingBackground.cs" />
+    <Compile Include="Assets\Scripts\SoundManager.cs" />
     <Compile Include="Assets\Scripts\SoyBoyController.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/clandry/Documents/Sound-Project/7WeekGame/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
