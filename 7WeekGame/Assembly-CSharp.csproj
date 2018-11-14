@@ -63,20 +63,29 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Bomb.cs" />
     <Compile Include="Assets\Scripts\CameraLerpToTransform.cs" />
+    <Compile Include="Assets\Scripts\Glass.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\ScrollingBackground.cs" />
+<<<<<<< HEAD
     <Compile Include="Assets\Scripts\SoyBoyController.cs" />
     <Reference Include="UnityEditor.StandardEvents">
 <<<<<<< HEAD
       <HintPath>C:/Users/hcao/Desktop/Sound/7WeekGame/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+=======
+    <Compile Include="Assets\Scripts\SoundManager.cs" />
+    <Compile Include="Assets\Scripts\SoyBoyController.cs" />
+    <Reference Include="UnityEditor.StandardEvents">
+      <HintPath>C:/Users/emarleau/Desktop/ProjectSound/7WeekGame/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+>>>>>>> 13e52742250b111ca7fce8383a15d52ca8293b3e
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/hcao/Desktop/Sound/7WeekGame/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/emarleau/Desktop/ProjectSound/7WeekGame/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/hcao/Desktop/Sound/7WeekGame/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/emarleau/Desktop/ProjectSound/7WeekGame/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
+<<<<<<< HEAD
       <HintPath>C:/Users/hcao/Desktop/Sound/7WeekGame/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
 =======
       <HintPath>C:/Users/ddolan/Desktop/SoundProject/7WeekGame/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
@@ -90,6 +99,9 @@
     <Reference Include="Unity.TextMeshPro">
       <HintPath>C:/Users/ddolan/Desktop/SoundProject/7WeekGame/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
 >>>>>>> 8e5726e03b0fcedc66a416f4c1983581e38656a7
+=======
+      <HintPath>C:/Users/emarleau/Desktop/ProjectSound/7WeekGame/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+>>>>>>> 13e52742250b111ca7fce8383a15d52ca8293b3e
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -273,10 +285,14 @@
     </Reference>
     <Reference Include="Facebook.Unity.Settings">
 <<<<<<< HEAD
+<<<<<<< HEAD
       <HintPath>C:/Users/hcao/Desktop/Sound/7WeekGame/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
 =======
       <HintPath>C:/Users/ddolan/Desktop/SoundProject/7WeekGame/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
 >>>>>>> 8e5726e03b0fcedc66a416f4c1983581e38656a7
+=======
+      <HintPath>C:/Users/emarleau/Desktop/ProjectSound/7WeekGame/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+>>>>>>> 13e52742250b111ca7fce8383a15d52ca8293b3e
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
@@ -298,6 +314,7 @@
     </Reference>
     <Reference Include="UnityEngine.Analytics">
 <<<<<<< HEAD
+<<<<<<< HEAD
       <HintPath>C:/Users/hcao/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.StandardEvents">
@@ -308,6 +325,12 @@
     <Reference Include="UnityEngine.StandardEvents">
       <HintPath>C:/Users/ddolan/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
 >>>>>>> 8e5726e03b0fcedc66a416f4c1983581e38656a7
+=======
+      <HintPath>C:/Users/emarleau/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.StandardEvents">
+      <HintPath>C:/Users/emarleau/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
+>>>>>>> 13e52742250b111ca7fce8383a15d52ca8293b3e
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unity/mscorlib.dll</HintPath>
