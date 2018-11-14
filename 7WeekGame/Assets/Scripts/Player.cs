@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-
     public bool isdDead;
     public int[] pitchArray;
+    public int speed;
 
     //Glass checks for walls
     Glass Glass1;
