@@ -7,7 +7,7 @@ public class Randomization : MonoBehaviour
     public GameObject prefab1, prefab2, prefab3, prefab4, prefab5;
     public GameObject randomWall;
 
-    public float spawnRate = 2f;
+    public float spawnRate = 200f;
 
     float nextSpawn = 0f;
 
@@ -41,9 +41,7 @@ public class Randomization : MonoBehaviour
                     break;
 
             }
-
-
-
+       
 
             nextSpawn = Time.time + spawnRate;
 

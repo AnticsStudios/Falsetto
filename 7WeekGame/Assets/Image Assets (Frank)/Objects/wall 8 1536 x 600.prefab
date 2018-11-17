@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4877238593481304}
   - component: {fileID: 212155539795762982}
+  - component: {fileID: 114174243732065452}
   m_Layer: 0
   m_Name: wall 8 1536 x 600
   m_TagString: Untagged
@@ -40,6 +41,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114174243732065452
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1819164765444458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 096bb3f5d6c70a94184a4433aabc193f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollSpeed: -3
+  tileSizeX: 40.7
 --- !u!212 &212155539795762982
 SpriteRenderer:
   m_ObjectHideFlags: 1
