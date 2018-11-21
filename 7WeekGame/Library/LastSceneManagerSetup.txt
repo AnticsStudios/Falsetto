@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/testObstacle.unity
+=======
+- path: Assets/Scenes/main menu.unity
+>>>>>>> 9b08ae7655ea41748b18545ff6ff13756d13ea08
   isLoaded: 1
   isActive: 1
