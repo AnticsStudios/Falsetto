@@ -1,4 +1,12 @@
 sceneSetups:
-- path: Assets/Scenes/testPlayer.unity
+<<<<<<< HEAD
+- path: Assets/Scenes/DannysTest.unity
+=======
+<<<<<<< HEAD
+- path: Assets/Scenes/testObstacle.unity
+=======
+- path: Assets/Scenes/main menu.unity
+>>>>>>> 9b08ae7655ea41748b18545ff6ff13756d13ea08
+>>>>>>> faff2ef3a07c5f82808f4d7b73d416ad6c74f254
   isLoaded: 1
   isActive: 1

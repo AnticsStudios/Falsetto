@@ -5,7 +5,7 @@ using UnityEngine;
 public class Randomization : MonoBehaviour
 {
     public GameObject prefab1, prefab2, prefab3, prefab4, prefab5;
-    public GameObject randomWall;
+    private GameObject randomWall;
 
     public float spawnRate = 200f;
 
@@ -13,14 +13,15 @@ public class Randomization : MonoBehaviour
 
     int whatToSpawn;
 
+
     private void Update()
     {
+
         if (Time.time > nextSpawn)
         {
             whatToSpawn = Random.Range(1, 6);
-            Debug.Log(whatToSpawn);
-             Destroy(randomWall);
-
+            //  Debug.Log(whatToSpawn);
+            Destroy(randomWall);
             switch (whatToSpawn)
             {
                 case 1:
@@ -41,11 +42,20 @@ public class Randomization : MonoBehaviour
                     break;
 
             }
-       
+
 
             nextSpawn = Time.time + spawnRate;
 
         }
+
+        //if (randomWall.activeInHierarchy)
+        //{
+        //    Debug.Log("active");
+        //}
+        //else
+        //{
+        //    Debug.Log("not");
+        //}
 
     }
 

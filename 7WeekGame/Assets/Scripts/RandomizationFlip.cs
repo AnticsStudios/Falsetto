@@ -5,7 +5,7 @@ using UnityEngine;
 public class RandomizationFlip : MonoBehaviour {
 
     public GameObject prefab1, prefab2, prefab3, prefab4, prefab5;
-    public GameObject randomWall;
+    private GameObject randomWall;
 
     public float spawnRate = 200f;
 
@@ -18,7 +18,7 @@ public class RandomizationFlip : MonoBehaviour {
         if (Time.time > nextSpawn)
         {
             whatToSpawn = Random.Range(1, 6);
-            Debug.Log(whatToSpawn);
+          //  Debug.Log(whatToSpawn);
             Destroy(randomWall);
 
             switch (whatToSpawn)
