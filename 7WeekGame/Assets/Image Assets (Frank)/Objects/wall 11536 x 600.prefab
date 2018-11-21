@@ -21,9 +21,11 @@ GameObject:
   - component: {fileID: 4005621379710956}
   - component: {fileID: 212228138885412726}
   - component: {fileID: 114088213585054954}
+  - component: {fileID: 65865309606270708}
+  - component: {fileID: 114077468182689358}
   m_Layer: 0
   m_Name: wall 11536 x 600
-  m_TagString: Untagged
+  m_TagString: object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41,6 +43,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &65865309606270708
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1761864302737984}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 1.4, z: 1}
+  m_Center: {x: -0.7, y: 0.5, z: 0}
+--- !u!114 &114077468182689358
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1761864302737984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13c9d4ac6f7cab040947d3cdeb08414f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114088213585054954
 MonoBehaviour:
   m_ObjectHideFlags: 1

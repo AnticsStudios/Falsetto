@@ -18,6 +18,9 @@ public class ScrollingBackground : MonoBehaviour
     {
         float newPosition = Mathf.Repeat(Time.time * scrollSpeed, tileSizeX);
         transform.position = startPosition + Vector2.right * newPosition;
+
     }
+
+    
 }
 
