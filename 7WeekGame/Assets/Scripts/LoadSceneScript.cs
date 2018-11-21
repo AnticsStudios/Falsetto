@@ -13,11 +13,11 @@ public class LoadSceneScript : MonoBehaviour
     public Animator quitButton;
     public Animator dialog;
     public Animator divider;
-
+    public Animator title;
     public void StartGame()
     {
         //on start button press load character selection
-        SceneManager.LoadScene("CharacterSelect");
+        SceneManager.LoadScene("DannysTest");
     }
 
     public void OpenSettings()
@@ -28,6 +28,7 @@ public class LoadSceneScript : MonoBehaviour
         quitButton.SetBool("isHidden", true);
         divider.SetBool("isHidden", true);
         dialog.SetBool("isHidden", false);
+        title.SetBool("isHidden", true);
     }
 
     public void CloseSettings()
@@ -38,6 +39,7 @@ public class LoadSceneScript : MonoBehaviour
         quitButton.SetBool("isHidden", false);
         divider.SetBool("isHidden", false);
         dialog.SetBool("isHidden", true);
+        title.SetBool("isHidden", false);
     }
 
     public void quitGame()
