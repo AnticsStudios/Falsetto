@@ -38,15 +38,17 @@ public class Playermanager : MonoBehaviour {
             Debug.Log(pos);
         }
 
-        if (Input.GetKey(KeyCode.Space))
-        {
-            anim.SetBool("Attack", true);
-            Debug.Log("space pressed");
+        //if (Input.GetKey(KeyCode.Alpha1))
+        //{
+        //    anim.SetBool("Attack", true);
 
-        }
-        else
-        {
-            anim.SetBool("Attack", false);
-        }
+
+        //    Debug.Log("Alpha1");
+
+        //}
+        //else
+        //{
+        //    anim.SetBool("Attack", false);
+        //}
     }
 }
