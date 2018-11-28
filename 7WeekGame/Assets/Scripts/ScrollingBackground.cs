@@ -14,7 +14,7 @@ public class ScrollingBackground : MonoBehaviour
         startPosition = transform.position;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         float newPosition = Mathf.Repeat(Time.time * scrollSpeed, tileSizeX);
         transform.position = startPosition + Vector2.right * newPosition;

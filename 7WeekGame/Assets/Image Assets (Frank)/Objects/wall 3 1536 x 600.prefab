@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 212359130003039214}
   - component: {fileID: 114158010709006008}
   - component: {fileID: 65125579990251500}
-  - component: {fileID: 114872229480078252}
   m_Layer: 0
   m_Name: wall 3 1536 x 600
   m_TagString: object
@@ -68,17 +67,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scrollSpeed: -3
   tileSizeX: 40.7
---- !u!114 &114872229480078252
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1288912114660254}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13c9d4ac6f7cab040947d3cdeb08414f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &212359130003039214
 SpriteRenderer:
   m_ObjectHideFlags: 1

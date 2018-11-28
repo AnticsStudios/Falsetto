@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class RandomizationFlip : MonoBehaviour {
 
-    public GameObject prefab1, prefab2, prefab3, prefab4, prefab5;
+    public GameObject prefab1, prefab2, prefab3;
     private GameObject randomWall;
 
-    public float spawnRate = 200f;
+    public float spawnRate = 13.5f;
 
     float nextSpawn = 0f;
 
@@ -15,10 +15,11 @@ public class RandomizationFlip : MonoBehaviour {
 
     private void Update()
     {
-        if (Time.time > nextSpawn)
+        if (Time.time > nextSpawn || Time.time > nextSpawn + 6.75f)
         {
             whatToSpawn = Random.Range(1, 6);
-          //  Debug.Log(whatToSpawn);
+            Debug.Log(whatToSpawn);
+            Debug.Log("rand_F");
             Destroy(randomWall);
 
             switch (whatToSpawn)
@@ -32,12 +33,6 @@ public class RandomizationFlip : MonoBehaviour {
                     break;
                 case 3:
                     randomWall = Instantiate(prefab3, transform.position, Quaternion.identity) as GameObject;
-                    break;
-                case 4:
-                    randomWall = Instantiate(prefab4, transform.position, Quaternion.identity) as GameObject;
-                    break;
-                case 5:
-                    randomWall = Instantiate(prefab5, transform.position, Quaternion.identity) as GameObject;
                     break;
 
             }
