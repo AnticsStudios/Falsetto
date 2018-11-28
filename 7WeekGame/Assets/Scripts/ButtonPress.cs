@@ -5,7 +5,7 @@ public class ButtonPress: MonoBehaviour
 {
 
     public AudioSource soundclip;
-    
+    private Rect ButtonLocation;
 
     void Start()
     {
@@ -22,7 +22,7 @@ public class ButtonPress: MonoBehaviour
     {
         
 
-       
+      
             if (Input.GetMouseButtonDown(0))
             {
                 soundclip.Play();
