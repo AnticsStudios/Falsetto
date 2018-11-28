@@ -6,12 +6,9 @@ public class Destroy : MonoBehaviour {
 
     // Use this for initialization
 
-    private void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Delete")
-        {
-            Destroy(this.gameObject);
-        }
+            Destroy(other.gameObject);
     }
 
 
