@@ -63,14 +63,15 @@
   <ItemGroup>
     <Compile Include="Assets\Animations\Glass Folder\Attack.cs" />
     <Compile Include="Assets\Bat Movements Sprites\Playermanager.cs" />
-    <Compile Include="Assets\MovePlayer.cs" />
     <Compile Include="Assets\Scripts\Bomb.cs" />
     <Compile Include="Assets\Scripts\ButtonPress.cs" />
     <Compile Include="Assets\Scripts\CameraLerpToTransform.cs" />
     <Compile Include="Assets\Scripts\Destroy.cs" />
     <Compile Include="Assets\Scripts\Glass.cs" />
-    <Compile Include="Assets\Scripts\LoadSceneScript.cs" />
     <Compile Include="Assets\Scripts\MenuScripts\DontDestroyMusic.cs" />
+    <Compile Include="Assets\Scripts\MenuScripts\LoadSceneScript.cs" />
+    <Compile Include="Assets\Scripts\MenuScripts\Score.cs" />
+    <Compile Include="Assets\Scripts\MovePlayer.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\Randomization.cs" />
     <Compile Include="Assets\Scripts\RandomizationFlip.cs" />
