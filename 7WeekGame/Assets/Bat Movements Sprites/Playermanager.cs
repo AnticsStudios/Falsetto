@@ -4,20 +4,39 @@ using UnityEngine;
 
 public class Playermanager : MonoBehaviour {
     Animator anim;
-    int pos = 0;
+    public Animator projectile1;
+    public Animator projectile2;
+    public Animator projectile3;
 
+    public SpriteRenderer Charged;
+    public SpriteRenderer Charged2;
+    public SpriteRenderer Charged3;
+
+    public float projectileSpeed = 0f;
+    int pos = 0;
     // Use this for initialization
     void Start ()
     {
         anim = GetComponent<Animator>();
 
-        
-	}
+        projectile1.enabled = false;
+        Charged.enabled = false;
+
+
+        projectile2.enabled = false;
+        Charged2.enabled = false;
+
+        projectile3.enabled = false;
+        Charged3.enabled = false;
+
+        projectile1.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        projectile2.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        projectile3.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+    }
 	
 	// Update is called once per frame
 	void Update ()
     {
-
 
         if (Input.GetKeyDown(KeyCode.W) && pos < 1)
         {
@@ -38,17 +57,84 @@ public class Playermanager : MonoBehaviour {
             Debug.Log(pos);
         }
 
-        //if (Input.GetKey(KeyCode.Alpha1))
-        //{
-        //    anim.SetBool("Attack", true);
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            projectile1.enabled = true;
+            Charged.enabled = false;
+            anim.SetBool("Attack", true);           
+            projectile1.Play("WeakAtk");
+            projectile1.transform.position = anim.transform.position + new Vector3(0.9f, 0.1f, 0.0f);
+
+            Debug.Log("Alpha1");
+
+        }
+        else if (Input.GetKeyUp(KeyCode.Alpha1))
+        {
+            Charged.enabled = true;
+            projectile1.enabled = false;
+            anim.SetBool("Attack", false);
+            projectile1.speed.Equals(0.0f);
+            projectile1.transform.position = new Vector3(-400.0f, 0.0f, 0);
+            projectileSpeed = 0.1f;
+
+            Charged.transform.position = anim.transform.position + new Vector3(0.9f, 0.1f, 0);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            projectile2.enabled = true;
+            Charged2.enabled = false;
+            anim.SetBool("Attack", true);
+            projectile2.Play("MediumAtk");
+            projectile2.transform.position = anim.transform.position + new Vector3(0.9f, 0.1f, 0.0f);
+
+        }
+        else if (Input.GetKeyUp(KeyCode.Alpha2))
+        {
+            Charged2.enabled = true;
+            projectile2.enabled = false;
+
+            anim.SetBool("Attack", false);
+            projectile2.speed.Equals(0.0f);
+            projectile2.transform.position = new Vector3(-400.0f, 0.0f, 0);
+            projectileSpeed = 0.1f;
+
+            Charged2.transform.position = anim.transform.position + new Vector3(0.9f, 0.1f, 0);
+        }
 
 
-        //    Debug.Log("Alpha1");
 
-        //}
-        //else
-        //{
-        //    anim.SetBool("Attack", false);
-        //}
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            projectile3.enabled = true;
+            Charged3.enabled = false;
+            anim.SetBool("Attack", true);
+            projectile3.Play("StrongAtk");
+            projectile3.transform.position = anim.transform.position + new Vector3(0.9f, 0.1f, 0.0f);
+
+        }
+        else if (Input.GetKeyUp(KeyCode.Alpha3))
+        {
+            Charged3.enabled = true;
+            projectile3.enabled = false;
+
+            anim.SetBool("Attack", false);
+            projectile3.speed.Equals(0.0f);
+            projectile3.transform.position = new Vector3(-400.0f, 0.0f, 0);
+            projectileSpeed = 0.1f;
+
+            Charged3.transform.position = anim.transform.position + new Vector3(0.9f, 0.1f, 0);
+        }
+
+
+
+
+        Charged3.transform.position += new Vector3(projectileSpeed, 0, 0);
+
+        Charged2.transform.position += new Vector3(projectileSpeed, 0, 0);
+
+        Charged.transform.position += new Vector3(projectileSpeed, 0, 0);
     }
+
+
 }
