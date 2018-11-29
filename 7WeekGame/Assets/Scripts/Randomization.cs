@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Randomization : MonoBehaviour
 {
-    public GameObject prefab1, prefab2, prefab3, prefab4, prefab5;
+    public GameObject prefab1, prefab2, prefab3;
     private GameObject randomWall;
 
-    public float spawnRate = 200f;
+    public float spawnRate = 13.5f;
 
     float nextSpawn = 0f;
 
@@ -17,11 +17,12 @@ public class Randomization : MonoBehaviour
     private void Update()
     {
 
-        if (Time.time > nextSpawn)
+        if (Time.time > nextSpawn || Time.time > nextSpawn + 6.75f)
         {
             whatToSpawn = Random.Range(1, 6);
-            //  Debug.Log(whatToSpawn);
-            Destroy(randomWall);
+            Debug.Log("rand");
+            Debug.Log(whatToSpawn);
+            // Destroy(randomWall);
             switch (whatToSpawn)
             {
                 case 1:
@@ -33,12 +34,6 @@ public class Randomization : MonoBehaviour
                     break;
                 case 3:
                     randomWall = Instantiate(prefab3, transform.position, Quaternion.identity) as GameObject;
-                    break;
-                case 4:
-                    randomWall = Instantiate(prefab4, transform.position, Quaternion.identity) as GameObject;
-                    break;
-                case 5:
-                    randomWall = Instantiate(prefab5, transform.position, Quaternion.identity) as GameObject;
                     break;
 
             }
