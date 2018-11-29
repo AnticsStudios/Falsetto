@@ -7,7 +7,7 @@ public class Playermanager : MonoBehaviour {
     public Animator projectile1;
     public Animator projectile2;
     public Animator projectile3;
-
+    public Transform ActualPlayer;
     public SpriteRenderer Charged;
     public SpriteRenderer Charged2;
     public SpriteRenderer Charged3;
@@ -65,22 +65,24 @@ public class Playermanager : MonoBehaviour {
             projectile1.enabled = true;
             projectile1.Play("WeakAtk");
             Charged.enabled = false;
+            gameObject.GetComponent<MovePlayer>().enabled = false;
+            gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
             projectile1.transform.position = anim.transform.position + new Vector3(0.9f, 0.1f, 0.0f);
             if(projectile1.GetFloat("WeakAtk") > 3)
             {
                 projectile1.enabled = false;
-
+                
             }
         }
         else if (Input.GetKeyUp(KeyCode.Alpha1))
         {
             Charged.enabled = true;
-
+            
             anim.SetBool("Attack", false);
             projectile1.speed.Equals(0.0f);
             projectile1.transform.position = new Vector3(-400.0f, 0.0f, 0);
             projectileSpeed = 0.1f;
-
+            gameObject.GetComponent<MovePlayer>().enabled = true;
             Charged.transform.position = anim.transform.position + new Vector3(0.9f, 0.1f, 0);
             projectile1.SetFloat("WeakAtk", 0);
             projectile1.SetBool("isIdle", true);
