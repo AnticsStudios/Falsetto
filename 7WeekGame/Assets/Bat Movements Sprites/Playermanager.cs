@@ -37,6 +37,7 @@ public class Playermanager : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        // projectile1.GetFloat("WeakAtk");
 
         if (Input.GetKeyDown(KeyCode.W) && pos < 1)
         {
@@ -59,25 +60,31 @@ public class Playermanager : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
+            projectile1.SetBool("isIdle", false);
+            anim.SetBool("Attack", true);
             projectile1.enabled = true;
-            Charged.enabled = false;
-            anim.SetBool("Attack", true);           
             projectile1.Play("WeakAtk");
+            Charged.enabled = false;
             projectile1.transform.position = anim.transform.position + new Vector3(0.9f, 0.1f, 0.0f);
+            if(projectile1.GetFloat("WeakAtk") > 3)
+            {
+                projectile1.enabled = false;
 
-            Debug.Log("Alpha1");
-
+            }
         }
         else if (Input.GetKeyUp(KeyCode.Alpha1))
         {
             Charged.enabled = true;
-            projectile1.enabled = false;
+
             anim.SetBool("Attack", false);
             projectile1.speed.Equals(0.0f);
             projectile1.transform.position = new Vector3(-400.0f, 0.0f, 0);
             projectileSpeed = 0.1f;
 
             Charged.transform.position = anim.transform.position + new Vector3(0.9f, 0.1f, 0);
+            projectile1.SetFloat("WeakAtk", 0);
+            projectile1.SetBool("isIdle", true);
+
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
