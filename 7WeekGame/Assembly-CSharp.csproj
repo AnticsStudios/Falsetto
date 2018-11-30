@@ -61,7 +61,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Animations\Glass Folder\Attack.cs" />
     <Compile Include="Assets\Bat Movements Sprites\Playermanager.cs" />
     <Compile Include="Assets\Scripts\Bomb.cs" />
     <Compile Include="Assets\Scripts\ButtonPress.cs" />
@@ -70,6 +69,7 @@
     <Compile Include="Assets\Scripts\Glass.cs" />
     <Compile Include="Assets\Scripts\MenuScripts\DontDestroyMusic.cs" />
     <Compile Include="Assets\Scripts\MenuScripts\LoadSceneScript.cs" />
+    <Compile Include="Assets\Scripts\MenuScripts\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\MenuScripts\Score.cs" />
     <Compile Include="Assets\Scripts\MovePlayer.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
