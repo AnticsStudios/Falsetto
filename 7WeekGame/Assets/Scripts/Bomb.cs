@@ -6,21 +6,9 @@ public class Bomb : MonoBehaviour
 {
     Player player;
 
-	// Use this for initialization
-	void Start ()
-    {
-		
-	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-	    
-	}
-
     void BlowUp()
     {
-        player.GetComponent<Player>().Deaderino();
+        player.GetComponent<Player>().Dead();
     }
 
     //Called when an object enters the trigger
