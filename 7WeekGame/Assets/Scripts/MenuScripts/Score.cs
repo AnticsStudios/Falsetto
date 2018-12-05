@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class Score : MonoBehaviour {
 
 
@@ -12,6 +13,14 @@ public class Score : MonoBehaviour {
     private int speed = 5;
     private float distance = 2;
 
+    private double[] highscore = new double[10];
+    public void scores()
+    {
+
+
+
+
+    }
     private void Start()
     {
         if (PlayerPrefs.GetInt("playerTotalScore") != 0)
