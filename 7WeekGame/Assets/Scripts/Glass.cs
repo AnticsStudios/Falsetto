@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class Glass : MonoBehaviour
 {
+
+    Animator anim;
+    public Animator RealBigGlass;
     public Collider2D collider;
-    public Player player;
+
 
     public void Shatter()
     {
+       
         Destroy(gameObject);
     }
+      
+   
 
     //Called upon when an object enters the trigger
     private void OnTriggerEnter(Collider2D collider)
@@ -19,7 +25,7 @@ public class Glass : MonoBehaviour
         if (collider.gameObject.GetComponent<Player>() != null && collider.gameObject.tag == "Player")
         {
             //calls the function to kill the player
-            player.GetComponent<Player>().Dead();
+            anim.GetComponent<Player>().Dead();
         }
     }
 }

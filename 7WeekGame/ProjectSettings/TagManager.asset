@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Delete
   - object
+  - Projectile
   layers:
   - Default
   - TransparentFX
@@ -57,4 +58,7 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 1985630415
+    locked: 0
+  - name: Projectile
+    uniqueID: 926132313
     locked: 0
