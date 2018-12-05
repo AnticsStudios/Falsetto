@@ -1,4 +1,8 @@
 sceneSetups:
-- path: Assets/Scenes/DannysTest.unity
+<<<<<<< HEAD
+- path: Assets/Scenes/Leaderboard.unity
+=======
+- path: Assets/Scenes/EndGame.unity
+>>>>>>> 8650c25bb70c1e2c6432ae4d36e1b41dc758a253
   isLoaded: 1
   isActive: 1

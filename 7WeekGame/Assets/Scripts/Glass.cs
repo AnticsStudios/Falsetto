@@ -4,20 +4,22 @@ using UnityEngine;
 
 public class Glass : MonoBehaviour
 {
+    public Collider2D collider;
+    public Player player;
+
     public void Shatter()
     {
         Destroy(gameObject);
     }
 
-    // Use this for initialization
-    void Start ()
+    //Called upon when an object enters the trigger
+    private void OnTriggerEnter(Collider2D collider)
     {
-		
-	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-		
-	}
+        //Checks for the player tag
+        if (collider.gameObject.GetComponent<Player>() != null && collider.gameObject.tag == "Player")
+        {
+            //calls the function to kill the player
+            player.GetComponent<Player>().Dead();
+        }
+    }
 }
