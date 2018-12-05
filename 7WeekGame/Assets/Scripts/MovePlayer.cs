@@ -7,7 +7,7 @@ public class MovePlayer : MonoBehaviour
     public int playerSpeed = 5;
     private float moveX;
     private float moveY;
-    private bool facingRight = true;
+    public bool facingRight = true;
     // Update is called once per frame
     void Update()
     {

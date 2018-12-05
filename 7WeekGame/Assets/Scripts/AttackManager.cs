@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Playermanager : MonoBehaviour {
+public class AttackManager : MonoBehaviour {
     Animator anim;
     public Animator projectile1;
     public Animator projectile2;
@@ -45,10 +45,11 @@ public class Playermanager : MonoBehaviour {
             projectile1.enabled = true;
             projectile1.Play("WeakAtk");
             Charged.enabled = false;
+            gameObject.GetComponent<MovePlayer>().facingRight = true;
             gameObject.GetComponent<MovePlayer>().enabled = false;
             gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
             projectile1.transform.position = anim.transform.position + new Vector3(0.9f, 0.1f, 0.0f);
-            if(projectile1.GetFloat("WeakAtk") > 3)
+            if(projectile1.GetFloat("FixedTime") > 1)
             {
                 projectile1.enabled = false;
                 
@@ -62,6 +63,7 @@ public class Playermanager : MonoBehaviour {
             projectile1.speed.Equals(0.0f);
             projectile1.transform.position = new Vector3(-400.0f, 0.0f, 0);
             projectileSpeed = 0.1f;
+            gameObject.GetComponent<MovePlayer>().facingRight = true;
             gameObject.GetComponent<MovePlayer>().enabled = true;
             Charged.transform.position = anim.transform.position + new Vector3(0.9f, 0.1f, 0);
             projectile1.SetFloat("WeakAtk", 0);
@@ -76,10 +78,11 @@ public class Playermanager : MonoBehaviour {
             projectile2.enabled = true;
             projectile2.Play("WeakAtk");
             Charged2.enabled = false;
+            gameObject.GetComponent<MovePlayer>().facingRight = true;
             gameObject.GetComponent<MovePlayer>().enabled = false;
             gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
             projectile2.transform.position = anim.transform.position + new Vector3(0.9f, 0.1f, 0.0f);
-            if (projectile2.GetFloat("WeakAtk") > 3)
+            if (projectile2.GetFloat("FixedTime") > 1)
             {
                 projectile2.enabled = false;
 
@@ -109,10 +112,11 @@ public class Playermanager : MonoBehaviour {
             projectile3.enabled = true;
             projectile3.Play("WeakAtk");
             Charged3.enabled = false;
+            gameObject.GetComponent<MovePlayer>().facingRight = true;
             gameObject.GetComponent<MovePlayer>().enabled = false;
             gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
             projectile3.transform.position = anim.transform.position + new Vector3(0.9f, 0.1f, 0.0f);
-            if (projectile3.GetFloat("WeakAtk") > 3)
+            if (projectile3.GetFloat("FixedTime") > 1)
             {
                 projectile3.enabled = false;
 
