@@ -7,12 +7,11 @@ public class MovePlayer : MonoBehaviour
     public int playerSpeed = 5;
     private float moveX;
     private float moveY;
-    private bool facingRight = true;
+    public bool facingRight = true;
     // Update is called once per frame
     void Update()
     {
         PlayerMove();
-        PlayerRaycast();
     }
 
     void PlayerMove()
@@ -40,12 +39,6 @@ public class MovePlayer : MonoBehaviour
         gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(moveX * playerSpeed, moveY * playerSpeed);
     }
 
-    void Jump()
-    {
-
-
-
-    }
 
     void FlipPlayer()
     {
@@ -55,21 +48,4 @@ public class MovePlayer : MonoBehaviour
         transform.localScale = localScale;
     }
 
-    void OnCollisionEnter2D(Collision2D col)
-    {
-        if (col.gameObject.tag == "Ground")
-        {
-
-
-        }
-    }
-    void PlayerRaycast()
-    {
-        //Debug.DrawLine(transform.position, Vector2.down);
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right);
-        if (hit.distance <= 1.0f && hit.collider.tag == "Enemy")
-        {
-            //collsion code goes here
-        }
-    }
 }

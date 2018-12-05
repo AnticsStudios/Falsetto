@@ -1,11 +1,21 @@
-﻿using System.Collections;
+﻿/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class LeaderboardScript : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+    public Text scoreCounterText;
+    public Text playerNameText;
+    public  double[] highscore = new double[10];
+    // Use this for initialization
+
+    void store() { 
+                  
+
+
+    }
+    
+    void Start () {
 		
 	}
 	
@@ -14,3 +24,4 @@ public class LeaderboardScript : MonoBehaviour {
 		
 	}
 }
+*/

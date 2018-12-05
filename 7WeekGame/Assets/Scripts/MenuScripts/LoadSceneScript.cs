@@ -19,7 +19,7 @@ public class LoadSceneScript : MonoBehaviour
     public void StartGame()
     {
         //on start button press load character selection
-        SceneManager.LoadScene("DannysTest");
+        SceneManager.LoadScene("CharacterSelect");
     }
 
     public void OpenSettings()
