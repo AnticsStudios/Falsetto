@@ -69,8 +69,9 @@
     <Compile Include="Assets\Scripts\Destroy.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\Glass.cs" />
-    <Compile Include="Assets\Scripts\MenuScripts\CharacterSelection.cs" />
     <Compile Include="Assets\Scripts\MenuScripts\DontDestroyMusic.cs" />
+    <Compile Include="Assets\Scripts\MenuScripts\Leaderboard.cs" />
+    <Compile Include="Assets\Scripts\MenuScripts\LeaderboardTestGUI.cs" />
     <Compile Include="Assets\Scripts\MenuScripts\LoadSceneScript.cs" />
     <Compile Include="Assets\Scripts\MenuScripts\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\MenuScripts\Score.cs" />
