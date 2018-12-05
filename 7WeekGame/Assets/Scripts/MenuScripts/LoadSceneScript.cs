@@ -16,11 +16,14 @@ public class LoadSceneScript : MonoBehaviour
     public Animator title;
     public Animator leaderboard;
     public Animator leaderboardButton;
+    public bool isStarted;
     public void StartGame()
     {
         //on start button press load character selection
         SceneManager.LoadScene("CharacterSelect");
+        isStarted = true;
     }
+
 
     public void OpenSettings()
     {
