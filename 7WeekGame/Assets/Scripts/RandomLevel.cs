@@ -5,16 +5,23 @@ using UnityEngine;
 public class RandomLevel : MonoBehaviour
 {
     public GameObject GameWall1, GameWall2, GameWall3, GameWall4;
-
+    public GameObject letsFixTimeBug;
+     
     public float spawnRate = 13.5f;
 
     float nextSpawn = 0f;
-
+    private float nextSpawner;
+    private void Start()
+    {
+        //     nextSpawn = -gameObject.GetComponent<LoadSceneScript>().unusableMenuTime;
+        letsFixTimeBug = GameObject.FindGameObjectWithTag("TimeBugFixer");
+        nextSpawner = -letsFixTimeBug.GetComponent<timebugfix>().unusableMenuTime;
+    }
     int whatToSpawn;
 
     private void Update()
     {
-        if (Time.time > nextSpawn)
+        if (Time.time - nextSpawner > nextSpawn)
         {
             whatToSpawn = Random.Range(1, 8);
             Debug.Log("rand_ LEVEL");
