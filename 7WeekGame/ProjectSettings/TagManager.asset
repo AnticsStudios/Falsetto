@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Delete
   - object
+  - Music
+  - TimeBugFixer
   layers:
   - Default
   - TransparentFX

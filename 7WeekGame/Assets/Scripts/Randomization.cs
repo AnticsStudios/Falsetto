@@ -6,10 +6,19 @@ public class Randomization : MonoBehaviour
 {
     public GameObject prefab1, prefab2, prefab3;
     private GameObject randomWall;
+    public GameObject letsFixTimeBug;
 
     public float spawnRate = 13.5f;
 
     float nextSpawn = 0f;
+    private float nextSpawner;
+    private void Start()
+    {
+        //     nextSpawn = -gameObject.GetComponent<LoadSceneScript>().unusableMenuTime; 
+        letsFixTimeBug = GameObject.FindGameObjectWithTag("TimeBugFixer");
+        nextSpawner = -letsFixTimeBug.GetComponent<timebugfix>().unusableMenuTime;
+    }
+
 
     int whatToSpawn;
 
@@ -17,7 +26,7 @@ public class Randomization : MonoBehaviour
     private void Update()
     {
 
-        if (Time.time > nextSpawn || Time.time > nextSpawn + 6.75f)
+        if (Time.time - nextSpawner > nextSpawn )
         {
             whatToSpawn = Random.Range(1, 6);
             Debug.Log("rand");

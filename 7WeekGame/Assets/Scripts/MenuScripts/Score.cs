@@ -9,8 +9,10 @@ public class Score : MonoBehaviour {
     public GameObject playerScoreUI;
     public Transform scoreDetection;
     private float playerScore;
+    private float timeScore;
     private int speed = 5;
     private float distance = 2;
+    public GameObject letsFixTimeBug;
 
     private void Start()
     {
@@ -22,6 +24,8 @@ public class Score : MonoBehaviour {
         {
             PlayerPrefs.SetInt("playerTotalScore", 10);
         }
+        letsFixTimeBug = GameObject.FindGameObjectWithTag("TimeBugFixer");
+        timeScore = -letsFixTimeBug.GetComponent<timebugfix>().unusableMenuTime;
     }
 
     void Update()
@@ -34,7 +38,7 @@ public class Score : MonoBehaviour {
 
         RaycastHit2D scoreInfo = Physics2D.Raycast(scoreDetection.position, Vector2.down, distance);
 
-         playerScore = (int)Time.time;
+         playerScore = (int)Time.time + (int)timeScore;
     }
 
 
