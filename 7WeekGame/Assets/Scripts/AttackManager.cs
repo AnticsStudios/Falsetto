@@ -40,25 +40,31 @@ public class AttackManager : MonoBehaviour {
         // projectile1.GetFloat("WeakAtk");
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            projectile1.SetBool("isIdle", false);
-            anim.SetBool("Attack", true);
-            projectile1.enabled = true;
-            projectile1.Play("WeakAtk");
-            Charged.enabled = false;
-            gameObject.GetComponent<MovePlayer>().facingRight = true;
-            gameObject.GetComponent<MovePlayer>().enabled = false;
-            gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
-            projectile1.transform.position = anim.transform.position + new Vector3(0.9f, 0.1f, 0.0f);
-            if(projectile1.GetFloat("FixedTime") > 1)
+            if (gameObject.GetComponent<MovePlayer>().facingRight == false)
             {
-                projectile1.enabled = false;
-                
+                gameObject.GetComponent<MovePlayer>().facingRight = true;
             }
+
+                projectile1.SetBool("isIdle", false);
+                anim.SetBool("Attack", true);
+                projectile1.enabled = true;
+                projectile1.Play("WeakAtk");
+                Charged.enabled = false;
+                projectileSpeed = 0.1f;
+                gameObject.GetComponent<MovePlayer>().enabled = false;
+                gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+                projectile1.transform.position = anim.transform.position + new Vector3(0.9f, 0.1f, 0.0f);
+                if (projectile1.GetFloat("FixedTime") > 1)
+                {
+                    projectile1.enabled = false;
+
+                }
+            
+
         }
-        else if (Input.GetKeyUp(KeyCode.Alpha1))
+        if (Input.GetKeyUp(KeyCode.Alpha1))
         {
             Charged.enabled = true;
-            
             anim.SetBool("Attack", false);
             projectile1.speed.Equals(0.0f);
             projectile1.transform.position = new Vector3(-400.0f, 0.0f, 0);
