@@ -61,11 +61,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\LeaderboardScript.cs" />
     <Compile Include="Assets\Scripts\AttackManager.cs" />
     <Compile Include="Assets\Scripts\Bomb.cs" />
     <Compile Include="Assets\Scripts\ButtonPress.cs" />
     <Compile Include="Assets\Scripts\CameraLerpToTransform.cs" />
     <Compile Include="Assets\Scripts\Destroy.cs" />
+    <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\Glass.cs" />
     <Compile Include="Assets\Scripts\MenuScripts\CharacterSelection.cs" />
     <Compile Include="Assets\Scripts\MenuScripts\DontDestroyMusic.cs" />
