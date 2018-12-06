@@ -7,6 +7,10 @@ TagManager:
   - Delete
   - object
   - Projectile
+  - WeakAtk
+  - MediumAtk
+  - StrongAtk
+  - Glass
   layers:
   - Default
   - TransparentFX
