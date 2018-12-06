@@ -53,11 +53,7 @@ public class AttackManager : MonoBehaviour {
                 gameObject.GetComponent<MovePlayer>().enabled = false;
                 gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
                 projectile1.transform.position = anim.transform.position + new Vector3(0.9f, 0.1f, 0.0f);
-                //if (projectile1.GetFloat("FixedTime") > 1)
-                //{
-                //    projectile1.enabled = false;
-
-                //}
+  
             
 
         }
@@ -108,7 +104,6 @@ public class AttackManager : MonoBehaviour {
             projectileSpeed = 0.1f;
             gameObject.GetComponent<MovePlayer>().enabled = true;
             Charged2.transform.position = anim.transform.position + new Vector3(0.9f, 0.1f, 0);
-            projectile2.SetFloat("MediumAtk", 0);
             projectile2.SetBool("isIdle", true);
         }
 

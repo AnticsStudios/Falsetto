@@ -11,7 +11,8 @@ TagManager:
   - MediumAtk
   - StrongAtk
   - Glass
-  - projectile3
+  - Music
+  - TimeBugFixer
   layers:
   - Default
   - TransparentFX
@@ -23,8 +24,8 @@ TagManager:
   - 
   - Player
   - Bullet
-  - 
-  - 
+  - Anims
+  - Enemies
   - 
   - 
   - 

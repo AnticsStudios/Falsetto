@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/main menu.unity
     guid: 77aed46d9fe3b4c4392c56eb31206fca
   - enabled: 1
+    path: Assets/Scenes/CharacterSelect.unity
+    guid: 85e069e8eeccd0b40bee6acd246148ed
+  - enabled: 1
     path: Assets/Scenes/DannysTest.unity
     guid: ae26794b340f24c4399fdddd81bd8ce6
   m_configObjects: {}
