@@ -14,7 +14,7 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: Medium
+  - m_Name: MediumAtk
     m_Type: 3
     m_DefaultFloat: 0
     m_DefaultInt: 1
@@ -94,7 +94,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: MediumAtk
-  m_Speed: 0.44
+  m_Speed: 3
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101615831425981760}
@@ -106,7 +106,7 @@ AnimatorState:
   m_SpeedParameterActive: 0
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 1
+  m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: 31c8ced43c165ed4ba0cd8ef81a8ebb8, type: 2}
   m_Tag: 
   m_SpeedParameter: FixedTime
