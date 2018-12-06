@@ -113,6 +113,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+<<<<<<< HEAD
 --- !u!1 &427559298
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,6 +326,13 @@ MonoBehaviour:
   omediumGlass: []
   oweakGlass: []
   glassAmount: 0
+=======
+--- !u!95 &119805990 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 95516335416414062, guid: efbe6ed7925a7e141a0fb872a724476b,
+    type: 2}
+  m_PrefabInternal: {fileID: 660231573}
+>>>>>>> 269d35c40007446f24ebbbefecd216c9729e427b
 --- !u!1001 &431932302
 Prefab:
   m_ObjectHideFlags: 0
@@ -367,6 +375,7 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3bd7657668853cb42920420511dbca67, type: 2}
   m_IsPrefabAsset: 0
+<<<<<<< HEAD
 --- !u!1 &576526729
 GameObject:
   m_ObjectHideFlags: 0
@@ -486,6 +495,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+=======
+>>>>>>> 269d35c40007446f24ebbbefecd216c9729e427b
 --- !u!1001 &660231573
 Prefab:
   m_ObjectHideFlags: 0
@@ -605,6 +616,116 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
+=======
+--- !u!1001 &1117037158
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4471324928735240, guid: d05c0fd1170bbbd4d833049ea58f0df9, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 3.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471324928735240, guid: d05c0fd1170bbbd4d833049ea58f0df9, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471324928735240, guid: d05c0fd1170bbbd4d833049ea58f0df9, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471324928735240, guid: d05c0fd1170bbbd4d833049ea58f0df9, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471324928735240, guid: d05c0fd1170bbbd4d833049ea58f0df9, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471324928735240, guid: d05c0fd1170bbbd4d833049ea58f0df9, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471324928735240, guid: d05c0fd1170bbbd4d833049ea58f0df9, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471324928735240, guid: d05c0fd1170bbbd4d833049ea58f0df9, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114595734380895600, guid: d05c0fd1170bbbd4d833049ea58f0df9,
+        type: 2}
+      propertyPath: strongGlass
+      value: 
+      objectReference: {fileID: 1191895614}
+    - target: {fileID: 114595734380895600, guid: d05c0fd1170bbbd4d833049ea58f0df9,
+        type: 2}
+      propertyPath: mediumGlass
+      value: 
+      objectReference: {fileID: 119805990}
+    - target: {fileID: 114595734380895600, guid: d05c0fd1170bbbd4d833049ea58f0df9,
+        type: 2}
+      propertyPath: weakGlass
+      value: 
+      objectReference: {fileID: 1482360006}
+    - target: {fileID: 114737107260010946, guid: d05c0fd1170bbbd4d833049ea58f0df9,
+        type: 2}
+      propertyPath: strongGlass
+      value: 
+      objectReference: {fileID: 1191895614}
+    - target: {fileID: 114737107260010946, guid: d05c0fd1170bbbd4d833049ea58f0df9,
+        type: 2}
+      propertyPath: mediumGlass
+      value: 
+      objectReference: {fileID: 119805990}
+    - target: {fileID: 114737107260010946, guid: d05c0fd1170bbbd4d833049ea58f0df9,
+        type: 2}
+      propertyPath: weakGlass
+      value: 
+      objectReference: {fileID: 1482360006}
+    - target: {fileID: 114743870202988938, guid: d05c0fd1170bbbd4d833049ea58f0df9,
+        type: 2}
+      propertyPath: strongGlass
+      value: 
+      objectReference: {fileID: 1191895614}
+    - target: {fileID: 114743870202988938, guid: d05c0fd1170bbbd4d833049ea58f0df9,
+        type: 2}
+      propertyPath: mediumGlass
+      value: 
+      objectReference: {fileID: 119805990}
+    - target: {fileID: 114743870202988938, guid: d05c0fd1170bbbd4d833049ea58f0df9,
+        type: 2}
+      propertyPath: weakGlass
+      value: 
+      objectReference: {fileID: 1482360006}
+    - target: {fileID: 114189884908471302, guid: d05c0fd1170bbbd4d833049ea58f0df9,
+        type: 2}
+      propertyPath: strongGlass
+      value: 
+      objectReference: {fileID: 1191895614}
+    - target: {fileID: 114189884908471302, guid: d05c0fd1170bbbd4d833049ea58f0df9,
+        type: 2}
+      propertyPath: mediumGlass
+      value: 
+      objectReference: {fileID: 119805990}
+    - target: {fileID: 114189884908471302, guid: d05c0fd1170bbbd4d833049ea58f0df9,
+        type: 2}
+      propertyPath: weakGlass
+      value: 
+      objectReference: {fileID: 1482360006}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d05c0fd1170bbbd4d833049ea58f0df9, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!95 &1191895614 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 95087521526911606, guid: 35585bb7eda82c8459870540726dca3d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1204701427}
+>>>>>>> 269d35c40007446f24ebbbefecd216c9729e427b
 --- !u!1001 &1204701427
 Prefab:
   m_ObjectHideFlags: 0
@@ -647,6 +768,7 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35585bb7eda82c8459870540726dca3d, type: 2}
   m_IsPrefabAsset: 0
+<<<<<<< HEAD
 --- !u!1 &1220145751
 GameObject:
   m_ObjectHideFlags: 0
@@ -913,3 +1035,10 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+=======
+--- !u!95 &1482360006 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 95750681073146918, guid: 3bd7657668853cb42920420511dbca67,
+    type: 2}
+  m_PrefabInternal: {fileID: 431932302}
+>>>>>>> 269d35c40007446f24ebbbefecd216c9729e427b
