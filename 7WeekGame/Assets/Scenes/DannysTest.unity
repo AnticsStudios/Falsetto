@@ -580,12 +580,12 @@ Prefab:
     - target: {fileID: 224761511160082720, guid: 4245c6e45904e1f42877f31ff3a01fb3,
         type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224598867374274676, guid: 4245c6e45904e1f42877f31ff3a01fb3,
         type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114726383926815570, guid: 4245c6e45904e1f42877f31ff3a01fb3,
         type: 2}

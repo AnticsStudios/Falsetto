@@ -17,6 +17,9 @@ TagManager:
   - Glass1
   - Glass2
   - Glass3
+  - Bomb1
+  - Bomb2
+  - Bomb3
   layers:
   - Default
   - TransparentFX

@@ -7,6 +7,7 @@ public class GlassHitDecection : MonoBehaviour
 {
 
     public Animator anim;
+
     public Animator[] strongGlass;
     public Animator[] mediumGlass;
     public Animator[] weakGlass;
@@ -19,11 +20,12 @@ public class GlassHitDecection : MonoBehaviour
     public GameObject[] omediumGlass;
     public GameObject[] oweakGlass;
 
-
-    public int glassAmount;
+    public GameObject[] ostrongBomb;
+    public GameObject[] omediumBomb;
+    public GameObject[] oweakBomb;
 
     void Start()
-     
+
     {
         Player = GameObject.FindGameObjectWithTag("Player");
 
@@ -36,19 +38,75 @@ public class GlassHitDecection : MonoBehaviour
         oweakGlass = GameObject.FindGameObjectsWithTag("Glass1");
         omediumGlass = GameObject.FindGameObjectsWithTag("Glass2");
         ostrongGlass = GameObject.FindGameObjectsWithTag("Glass3");
+        oweakBomb = GameObject.FindGameObjectsWithTag("Bomb1");
+        omediumBomb = GameObject.FindGameObjectsWithTag("Bomb2");
+        ostrongBomb = GameObject.FindGameObjectsWithTag("Bomb3");
+
     }
 
-    public void doAnimations(GameObject[] animateGlass)
-    {
-        Animator glass = animateGlass[0].GetComponent<Animator>();
-        glass.SetBool("isIdle", false);
-        glass.GetComponent<BoxCollider2D>().enabled = false;
-        Debug.Log("in here");
-    }
 
-        void OnTriggerEnter2D(Collider2D other)   // If player hits Heavy glass they Die
+
+
+    void OnTriggerEnter2D(Collider2D other)   // If player hits Heavy glass they Die
     {
-        if (other.gameObject.tag == "Glass1"|| other.gameObject.tag == "Glass2"|| other.gameObject.tag == "Glass3")
+
+            if (this.gameObject.tag == "Player")
+            {
+            if (other.gameObject.tag == "Glass1" || other.gameObject.tag == "Glass2" || other.gameObject.tag == "Glass3" || other.gameObject.tag == "Bomb1" || other.gameObject.tag == "Bomb2" || other.gameObject.tag == "Bomb3")
+            {
+                anim.SetBool("Death", true);
+                anim.GetComponent<Rigidbody2D>().gravityScale = 1;// (int)9.8;
+            }
+            if(other.gameObject.tag == "Glass3" || other.gameObject.tag == "Bomb1" || other.gameObject.tag == "Bomb2" || other.gameObject.tag == "Bomb3")
+            {
+                anim.SetBool("Death", true);
+                Animator bomb = other.GetComponent<Animator>();
+                anim.GetComponent<Rigidbody2D>().gravityScale = 1;// (int)9.8;
+                bomb.SetBool("Bomb", true);
+            }
+        }
+        if (other.gameObject.tag == "Glass1")
+        {
+            if (this.gameObject.tag == "WeakAtk")
+            {
+                Animator glass = other.GetComponent<Animator>();
+                glass.SetBool("isIdle", false);
+                Destroy(this.gameObject);
+
+            }
+            else if ((this.gameObject.tag == "MediumAtk" || this.gameObject.tag == "StrongAtk"))
+            {
+                Destroy(this.gameObject);
+            }
+        }
+        if (other.gameObject.tag == "Glass2")
+        {
+            if (this.gameObject.tag == "MediumAtk")
+            {
+                Animator glass = other.GetComponent<Animator>();
+                glass.SetBool("isIdle", false);
+                Destroy(this.gameObject);
+            }
+            else if ((this.gameObject.tag == "WeakAtk" || this.gameObject.tag == "StrongAtk"))
+            {
+                Destroy(this.gameObject);
+            }
+        }
+        if (other.gameObject.tag == "Glass3")
+        {
+            if (this.gameObject.tag == "StrongAtk")
+            {
+                Animator glass = other.GetComponent<Animator>();
+                glass.SetBool("isIdle", false);
+                Destroy(this.gameObject);
+            }
+            else if ((this.gameObject.tag == "MediumAtk" || this.gameObject.tag == "WeakAtk"))
+            {
+                Destroy(this.gameObject);
+            }
+        }
+
+        if (other.gameObject.tag == "Bomb1" || other.gameObject.tag == "Bomb2" || other.gameObject.tag == "Bomb3")
         {
             if (this.gameObject.tag == "Player")
             {
@@ -57,44 +115,49 @@ public class GlassHitDecection : MonoBehaviour
                 anim.GetComponent<Rigidbody2D>().gravityScale = 1;// (int)9.8;
             }
         }
-        if (other.gameObject.tag == "Glass1")
+        if (other.gameObject.tag == "Bomb1")
         {
             if (this.gameObject.tag == "WeakAtk")
             {
-                doAnimations(oweakGlass);
-                //GetComponent<Rigidbody2D>().gravityScale = 1;
+                Animator bomb = other.GetComponent<Animator>();
+                bomb.SetBool("Bomb", true);
             }
-            else if((this.gameObject.tag == "MediumAtk" || this.gameObject.tag == "StrongAtk"))
+            else if ((this.gameObject.tag == "MediumAtk" || this.gameObject.tag == "StrongAtk"))
             {
                 Destroy(this.gameObject);
+                Animator bomb = other.GetComponent<Animator>();
+                bomb.SetBool("Bomb", true);
             }
         }
-            if (other.gameObject.tag == "Glass2")
+        if (other.gameObject.tag == "Bomb2")
+        {
+            if (this.gameObject.tag == "MediumAtk")
             {
-                if (this.gameObject.tag == "MediumAtk")
-                {
-                doAnimations(omediumGlass);
-                Debug.Log("in here");
-
-                //GetComponent<Rigidbody2D>().gravityScale = 1;
-                 }
-                else if ((this.gameObject.tag == "WeakAtk" || this.gameObject.tag == "StrongAtk"))
-                {
-                    Destroy(this.gameObject);
-                }
+                Animator bomb = other.GetComponent<Animator>();
+                bomb.SetBool("Bomb", true);
+            }
+            else if ((this.gameObject.tag == "WeakAtk" || this.gameObject.tag == "StrongAtk"))
+            {
+                Destroy(this.gameObject);
+                Animator bomb = other.GetComponent<Animator>();
+                bomb.SetBool("Bomb", true);
+            }
         }
-            if (other.gameObject.tag == "Glass3")
+        if (other.gameObject.tag == "Bomb3")
+        {
+            if (this.gameObject.tag == "StrongAtk")
             {
-                if (this.gameObject.tag == "StrongAtk")
-                {
-                doAnimations(ostrongGlass);
+                Animator bomb = other.GetComponent<Animator>();
+                bomb.SetBool("Bomb", true);
             }
             else if ((this.gameObject.tag == "MediumAtk" || this.gameObject.tag == "WeakAtk"))
             {
                 Destroy(this.gameObject);
+                Animator bomb = other.GetComponent<Animator>();
+                bomb.SetBool("Bomb", true);
             }
         }
-        
+
 
 
     }

@@ -44,6 +44,8 @@ public class BigGlassScript : MonoBehaviour
             Destroy(other.gameObject);
         }
 
+
+
         //if (this.tag == "WeakAtk")
         //{
         //    weakGlass.SetBool("", true);
