@@ -7,7 +7,7 @@ public class Glass : MonoBehaviour
 
     Animator anim;
     public Animator RealBigGlass;
-    public Collider2D collider;
+    //public Collider2D collider;
 
 
     public void Shatter()
@@ -19,13 +19,13 @@ public class Glass : MonoBehaviour
    
 
     //Called upon when an object enters the trigger
-    private void OnTriggerEnter(Collider2D collider)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         //Checks for the player tag
-        if (collider.gameObject.GetComponent<Player>() != null && collider.gameObject.tag == "Player")
-        {
+        //if (other.gameObject.GetComponent<Player>() != null && other.gameObject.tag == "Player")
+        //{
             //calls the function to kill the player
             anim.GetComponent<Player>().Dead();
-        }
+        //}
     }
 }

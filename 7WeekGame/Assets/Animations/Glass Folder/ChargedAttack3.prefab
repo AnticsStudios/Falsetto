@@ -20,9 +20,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4093183025914588}
   - component: {fileID: 212879669474219990}
+  - component: {fileID: 64743599931169074}
   m_Layer: 0
   m_Name: ChargedAttack3
-  m_TagString: Untagged
+  m_TagString: StrongAtk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34,12 +35,26 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1514601827260672}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.8886421, y: -0.9541615, z: 0.20526673}
+  m_LocalPosition: {x: -0.8886423, y: -0.95416164, z: 0.20526673}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &64743599931169074
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1514601827260672}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 0}
 --- !u!212 &212879669474219990
 SpriteRenderer:
   m_ObjectHideFlags: 1

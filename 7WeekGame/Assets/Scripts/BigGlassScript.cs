@@ -6,66 +6,67 @@ using UnityEngine;
 public class BigGlassScript : MonoBehaviour
 {
 
-    Animator anim;
-    public Animator projectile3;
-    public Transform ActualPlayer;
- 
+    public Animator anim;
 
-    public SpriteRenderer Charged3;
 
-    public MeshCollider chargedattack3;
-    public BoxCollider2D GlassBHitbox;          //HitBoxes
-    public CircleCollider2D Player;
-    
-    public Animator bigglass;
 
-    public GameObject GlassB;
-  
+
+    //  public SpriteRenderer Charged3;  
+
+    //  public MeshCollider chargedattack3;
+
+    public Animator weakGlass;
+    public Animator mediumGlass;
+    public Animator strongGlass;
+
+
+
     // Use this for initialization
     void Start()
     {
-        anim = GetComponent<Animator>();
 
-      
-
-
-       
-       
-
-        projectile3.enabled = false;
-        Charged3.enabled = false;
-
-       
-        projectile3.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
     }
 
     // Update is called once per frame
 
-  
 
-    void OnCollisionEnter2D(Collision2D GlassB)   // If player hits Heavy glass they Die
+
+    void OnTriggerEnter2D(Collider2D other)   // If player hits Heavy glass they Die
     {
-        if  (Player)
+        if (this.tag == "Player")
         {
             anim.SetBool("Death", true);
-
         }
-    }
-
-
-    void OnCollisionEnter2D(Collider2D GlassBHitbox) // If if Charge attack hits Heavy glass breaks
-    {
-        
-        if (Charged3)
+        if (other.gameObject.tag == "Glass")
         {
-            bigglass.SetBool("BigGlass", true);
-
-
-            Destroy(GlassB);
-
+            Destroy(other.gameObject);
+            GetComponent<Rigidbody2D>().gravityScale = (int)9.8;
         }
+        //if (this.tag == "WeakAtk")
+        //{
+        //    weakGlass.SetBool("", true);
+
+        //}
+        //if (this.tag == "MediumAtk")
+        //{
+        //    mediumGlass.SetBool("", true);
+
+        //}
+        if (other.gameObject.tag == "StrongAtk")
+        {
+            
+
+            strongGlass.SetBool("StrongGlass", true);
+            strongGlass.Play("StrongGlass");
+            if (strongGlass.GetFloat("NewTime") == 1)
+            {
+                Destroy(other.gameObject);
+            }
+        }
+
+
     }
 
-   
-     
 }
+
+
