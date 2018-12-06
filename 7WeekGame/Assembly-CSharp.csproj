@@ -61,10 +61,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\BombDestroy.cs" />
+    <Compile Include="Assets\killGlass.cs" />
     <Compile Include="Assets\Scripts\AttackManager.cs" />
     <Compile Include="Assets\Scripts\BatAnimation.cs" />
     <Compile Include="Assets\Scripts\BigGlassScript.cs" />
-    <Compile Include="Assets\Scripts\Bomb.cs" />
     <Compile Include="Assets\Scripts\BombRob.cs" />
     <Compile Include="Assets\Scripts\BulletTrigger.cs" />
     <Compile Include="Assets\Scripts\ButtonPress.cs" />
