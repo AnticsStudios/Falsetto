@@ -67,8 +67,14 @@ public class AttackManager : MonoBehaviour {
             else //If player isn't attacking
             {
                 anim.SetBool("Attack", false);
-                gameObject.GetComponent<MovePlayer>().enabled = true;
-
+                if (anim.GetBool("Death") == true)
+                {
+                    gameObject.GetComponent<MovePlayer>().enabled = false;
+                }
+                else
+                {
+                    gameObject.GetComponent<MovePlayer>().enabled = true;
+                }
             }
 
         }
@@ -87,7 +93,7 @@ public class AttackManager : MonoBehaviour {
             isAttacking = true;
 
             projectile1.SetBool("isIdle", false);
-            projectile1.transform.position = anim.transform.position;
+            projectile1.transform.position = Launcher.transform.position;
         }
 
         if (Input.GetKeyUp(KeyCode.Keypad1))
@@ -98,6 +104,7 @@ public class AttackManager : MonoBehaviour {
 
             GameObject Charged = FireBullets(Charged1);
             Charged.gameObject.tag = "WeakAtk";
+
             Charged.transform.position = Launcher.transform.position;
             Charged.GetComponent<Rigidbody2D>().velocity = new Vector2(5, 0);
 
@@ -107,14 +114,13 @@ public class AttackManager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Keypad2))
         {
             isAttacking = true;
-            projectile2.enabled = true;
+
             projectile2.SetBool("isIdle", false);
             projectile2.transform.position = Launcher.transform.position;
         }
 
         if (Input.GetKeyUp(KeyCode.Keypad2))
         {
-            projectile2.enabled = false;
             projectile2.SetBool("isIdle", true);
             projectile2.transform.position = new Vector3(-400.0f, 0.0f, 0);
 
@@ -130,18 +136,18 @@ public class AttackManager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Keypad3))
         {
             isAttacking = true;
-            projectile3.enabled = true;
+
             projectile3.SetBool("isIdle", false);
             projectile3.transform.position = Launcher.transform.position;
         }
         if (Input.GetKeyUp(KeyCode.Keypad3))
         {
-            projectile3.enabled = false;
             projectile3.SetBool("isIdle", true);
             projectile3.transform.position = new Vector3(-400.0f, 0.0f, 0);
 
             GameObject ChargedThree = FireBullets(Charged3);
             ChargedThree.gameObject.tag = "StrongAtk";
+
             ChargedThree.transform.position = Launcher.transform.position;
             ChargedThree.GetComponent<Rigidbody2D>().velocity = new Vector2(5, 0);
 

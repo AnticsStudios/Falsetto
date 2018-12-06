@@ -7,9 +7,9 @@ public class GlassHitDecection : MonoBehaviour
 {
 
     public Animator anim;
-    public Animator strongGlass;
-    public Animator mediumGlass;
-    public Animator weakGlass;
+    public Animator[] strongGlass;
+    public Animator[] mediumGlass;
+    public Animator[] weakGlass;
     public GameObject Player;
     public GameObject[] Projectile1;
     public GameObject[] Projectile2;
@@ -52,6 +52,7 @@ public class GlassHitDecection : MonoBehaviour
         {
             if (this.gameObject.tag == "Player")
             {
+
                 anim.SetBool("Death", true);
                 anim.GetComponent<Rigidbody2D>().gravityScale = 1;// (int)9.8;
             }
