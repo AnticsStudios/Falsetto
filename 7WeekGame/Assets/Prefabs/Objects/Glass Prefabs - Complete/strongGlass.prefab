@@ -22,9 +22,9 @@ GameObject:
   - component: {fileID: 212533014749459478}
   - component: {fileID: 95087521526911606}
   - component: {fileID: 61141160629579866}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: strongGlass
-  m_TagString: StrongGlass
+  m_TagString: Glass3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

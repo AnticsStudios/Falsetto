@@ -14,6 +14,9 @@ TagManager:
   - Music
   - TimeBugFixer
   - Clone
+  - Glass1
+  - Glass2
+  - Glass3
   layers:
   - Default
   - TransparentFX

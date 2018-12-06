@@ -5,7 +5,7 @@ AnimatorController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: strongGlass
+  m_Name: StrongGlass
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: isIdle
