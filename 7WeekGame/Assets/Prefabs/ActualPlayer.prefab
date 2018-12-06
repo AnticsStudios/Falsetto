@@ -318,6 +318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 95838813763363858}
+  glasses: {fileID: 0}
   strongGlass: []
   mediumGlass: []
   weakGlass: []
@@ -331,7 +332,6 @@ MonoBehaviour:
   ostrongGlass: []
   omediumGlass: []
   oweakGlass: []
-  glassAmount: 0
 --- !u!114 &114707568798466680
 MonoBehaviour:
   m_ObjectHideFlags: 1

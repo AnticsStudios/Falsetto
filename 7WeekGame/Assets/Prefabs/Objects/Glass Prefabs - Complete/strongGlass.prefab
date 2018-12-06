@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 95087521526911606}
   - component: {fileID: 61141160629579866}
   - component: {fileID: 114498274980281458}
+  - component: {fileID: 114603371705978604}
   m_Layer: 0
   m_Name: strongGlass
   m_TagString: Glass3
@@ -99,6 +100,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scrollSpeed: -3
   tileSizeX: 20.35
+--- !u!114 &114603371705978604
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1046827560358628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed8773e04d80e4947bc70ce6431d0f94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212533014749459478
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -134,7 +146,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 95a06c2aa55bacd4186ff9924b47e94c, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -142,6 +154,6 @@ SpriteRenderer:
   m_Size: {x: 2.23, y: 2.46}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
