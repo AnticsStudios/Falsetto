@@ -1,0 +1,172 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class AttackManager : MonoBehaviour {
+    Animator anim;
+    public Animator projectile1;
+    public Animator projectile2;
+    public Animator projectile3;
+    public Transform ActualPlayer;
+    public SpriteRenderer Charged;
+    public SpriteRenderer Charged2;
+    public SpriteRenderer Charged3;
+
+
+    int i;
+
+
+    public float projectileSpeed = 0f;
+
+    // Use this for initialization
+    void Start ()
+    {
+        anim = GetComponent<Animator>();
+
+        projectile1.enabled = false;
+        projectile2.enabled = false;
+        projectile3.enabled = false;
+
+
+        projectile1.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        projectile2.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        projectile3.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+    }
+
+    SpriteRenderer fireBullets(SpriteRenderer type, float speed)
+    {
+
+        SpriteRenderer ChargedUpShot = Instantiate(type) as SpriteRenderer;
+
+        //ChargedUpShot.transform.position += new Vector3(speed, 0, 0);
+        return type;
+    }
+
+    void animator(Animator type, bool status)
+    {
+        type.enabled = status;
+        type.SetBool("isIdle", !status);
+        type.Play("WeakAtk");
+        type.transform.position = anim.transform.position + new Vector3(0.9f, 0.1f, 0.0f);
+    }
+    void deAnimate(Animator type, bool status)
+    {
+        type.enabled = !status;
+        type.SetBool("isIdle", status);
+        type.transform.position = new Vector3(-400.0f, 0.0f, 0);
+    }
+
+        // Update is called once per frame
+        void Update ()
+        {
+        // projectile1.GetFloat("WeakAtk");
+        if (Input.GetKeyDown(KeyCode.Keypad1))
+        {
+            if (gameObject.GetComponent<MovePlayer>().facingRight == false)
+            {
+                gameObject.GetComponent<MovePlayer>().FlipPlayer();
+            }
+
+
+            anim.SetBool("Attack", true);
+            animator(projectile1, !true);
+
+                gameObject.GetComponent<MovePlayer>().enabled = false;
+                gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);   
+
+        }
+        if (Input.GetKeyUp(KeyCode.Keypad1))
+        {
+            deAnimate(projectile1, true);
+            anim.SetBool("Attack", false);
+
+
+            gameObject.GetComponent<MovePlayer>().facingRight = true;
+            gameObject.GetComponent<MovePlayer>().enabled = true;
+
+
+            SpriteRenderer ChargedUpShot = fireBullets(Charged, 1f);
+            
+
+            //Charged.transform.position = anim.transform.position + new Vector3(0.9f, 0.1f, 0);
+
+
+        }
+
+        if (Input.GetKeyDown(KeyCode.Keypad2))
+        {
+            if (gameObject.GetComponent<MovePlayer>().facingRight == false)
+            {
+                gameObject.GetComponent<MovePlayer>().FlipPlayer();
+            }
+            projectile2.SetBool("isIdle", false);
+            anim.SetBool("Attack", true);
+            projectile2.enabled = true;
+            projectile2.Play("MediumAtk");
+
+            gameObject.GetComponent<MovePlayer>().facingRight = true;
+            gameObject.GetComponent<MovePlayer>().enabled = false;
+            gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+
+            projectile2.transform.position = anim.transform.position + new Vector3(0.9f, 0.1f, 0.0f);
+
+        }
+        if (Input.GetKeyUp(KeyCode.Keypad2))
+        {
+
+
+            anim.SetBool("Attack", false);
+            projectile2.speed.Equals(0.0f);
+            projectile2.transform.position = new Vector3(-400.0f, 0.0f, 0);
+            projectileSpeed = 0.1f;
+            gameObject.GetComponent<MovePlayer>().enabled = true;
+            Charged2.transform.position = anim.transform.position + new Vector3(0.9f, 0.1f, 0);
+            projectile2.SetBool("isIdle", true);
+
+        }
+
+
+
+        if (Input.GetKeyDown(KeyCode.Keypad3))
+        {
+            if (gameObject.GetComponent<MovePlayer>().facingRight == false)
+            {
+                gameObject.GetComponent<MovePlayer>().FlipPlayer();
+            }
+            projectile3.SetBool("isIdle", false);
+            anim.SetBool("Attack", true);
+            projectile3.enabled = true;
+            projectile3.Play("StrongAtk");
+
+            gameObject.GetComponent<MovePlayer>().facingRight = true;
+            gameObject.GetComponent<MovePlayer>().enabled = false;
+            gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+            projectile3.transform.position = anim.transform.position + new Vector3(0.9f, 0.1f, 0.0f);
+
+        }
+        if (Input.GetKeyUp(KeyCode.Keypad3))
+        {
+
+
+            anim.SetBool("Attack", false);
+            projectile3.speed.Equals(0.0f);
+            projectile3.transform.position = new Vector3(-400.0f, 0.0f, 0);
+            projectileSpeed = 0.1f;
+            gameObject.GetComponent<MovePlayer>().enabled = true;
+            Charged3.transform.position = anim.transform.position + new Vector3(0.9f, 0.1f, 0);
+            projectile3.SetFloat("StrongAttack", 0);
+            projectile3.SetBool("isIdle", true);
+        }
+
+
+
+        if (gameObject.tag == projectile1)
+        {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(1, 0);
+        }
+
+
+    }
+
+
+}

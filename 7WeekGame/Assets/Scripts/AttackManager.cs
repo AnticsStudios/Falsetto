@@ -72,7 +72,7 @@ public class AttackManager : MonoBehaviour {
             gameObject.GetComponent<MovePlayer>().enabled = true;
             Charged.transform.position = anim.transform.position + new Vector3(0.9f, 0.1f, 0);
             projectile1.SetFloat("WeakAtk", 0);
-            projectile1.SetBool("isIdle", true);
+            projectile1.SetBool("isIdle", true); 
 
         }
 
