@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 61141160629579866}
   m_Layer: 11
   m_Name: strongGlass
-  m_TagString: Glass
+  m_TagString: StrongGlass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59,7 +59,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 2.16, y: 2.32}
-    newSize: {x: 2.16, y: 2.32}
+    newSize: {x: 2.23, y: 2.46}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -125,7 +125,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.16, y: 2.32}
+  m_Size: {x: 2.23, y: 2.46}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

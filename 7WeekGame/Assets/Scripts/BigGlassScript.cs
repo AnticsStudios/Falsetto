@@ -5,19 +5,22 @@ using UnityEngine;
 
 public class BigGlassScript : MonoBehaviour
 {
-
     public Animator anim;
 
-    public Animator weakGlass;
+    public GameObject weakGlass;
     public Animator mediumGlass;
-    public Animator strongGlass;
+    private GameObject strongGlass;
 
     public GameObject Attack3;
 
 
 
     // Update is called once per frame
+    public void Start()
+    {
 
+
+    }
 
     void OnTriggerEnter2D(Collider2D other)   // If player hits Heavy glass they Die
     {
@@ -27,13 +30,11 @@ public class BigGlassScript : MonoBehaviour
             GetComponent<Rigidbody2D>().gravityScale = (int)9.8;
         }
     
-        if (other.gameObject.tag != "Player")
+        if (other.gameObject.tag == "Clone")
         {
-            other.GetComponent<Animator>().SetBool("Glass", true);
-            other.GetComponent<BoxCollider2D>().enabled = false;
+       
 
-                Destroy(other.gameObject);
-            }
+        }
 
             //if (this.tag == "WeakAtk")
             //{

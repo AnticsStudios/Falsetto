@@ -13,9 +13,8 @@ public class AttackManager : MonoBehaviour {
     public Transform ActualPlayer;
     public Transform Launcher;
     public bool isAttacking = false;
-    public float projectileSpeed = 0.1f;
-
-    // Use this for initialization
+    private int i = 0;
+  
     void Start ()
     {
         anim = GetComponent<Animator>();
@@ -31,7 +30,6 @@ public class AttackManager : MonoBehaviour {
     }
 
 
-    // Update is called once per frame
     void Update ()
     {
         if(Input.anyKey)
@@ -70,8 +68,6 @@ public class AttackManager : MonoBehaviour {
             anim.SetBool("Attack", false);
             
         }
-
-        // projectile1.GetFloat("WeakAtk");
         if (Input.GetKeyDown(KeyCode.Keypad1))
         {
             isAttacking = true;
@@ -81,71 +77,83 @@ public class AttackManager : MonoBehaviour {
         }
         if (Input.GetKeyUp(KeyCode.Keypad1))
         {
-            projectile1.transform.position = new Vector3(-400.0f, 0.0f, 0);
             GameObject Charged = FireBullets(Charged1);
+            projectile1.transform.position = new Vector3(-400.0f, 0.0f, 0);
+            Charged.gameObject.tag = "Clone";
+
+
+            var clones = GameObject.FindGameObjectsWithTag("Clone");
+            i++;
+            if (i > 10)
+            {
+                foreach (var clone in clones)
+                {
+                    Destroy(clone);
+                }
+                i = 0;
+            }
+
             Charged.transform.position = Launcher.transform.position;
             Charged.GetComponent<Rigidbody2D>().velocity = new Vector2(5, 0);
             isAttacking = false;
         }
 
-        //if (Input.GetKeyDown(KeyCode.Keypad2))
-        //{
+        if (Input.GetKeyDown(KeyCode.Keypad2))
+        {
+            isAttacking = true;
+            projectile2.enabled = true;
+            projectile2.Play("MediumAtk");
+            projectile2.transform.position = anim.transform.position + new Vector3(0.9f, 0.1f, 0.0f);
+        }
+        if (Input.GetKeyUp(KeyCode.Keypad2))
+        {
+            GameObject ChargedTwo = FireBullets(Charged2);
+            ChargedTwo.transform.position = Launcher.transform.position;
+            projectile2.transform.position = new Vector3(-400.0f, 0.0f, 0);
+            ChargedTwo.gameObject.tag = "Clone";
 
-        //    projectile2.SetBool("isIdle", false);
-        //    anim.SetBool("Attack", true);
-        //    projectile2.enabled = true;
-        //    projectile2.Play("MediumAtk");
-        //    Charged2.enabled = false;
+            ChargedTwo.GetComponent<Rigidbody2D>().velocity = new Vector2(5, 0);
+            var clones = GameObject.FindGameObjectsWithTag("Clone");
+            i++;
+            if (i > 10)
+            {
+                foreach (var clone in clones)
+                {
+                    Destroy(clone);
+                }
+                i = 0;
+            }
+            isAttacking = false;
+        }
 
-        //    projectile2.transform.position = anim.transform.position + new Vector3(0.9f, 0.1f, 0.0f);
-        //    if (projectile2.GetFloat("FixedTime") > 1)
-        //    {
-        //        projectile2.enabled = false;
+        if (Input.GetKeyDown(KeyCode.Keypad3))
+        {
+            isAttacking = true;
+            projectile3.enabled = true;
+            projectile3.Play("StrongGlass");
+            projectile3.transform.position = anim.transform.position + new Vector3(0.9f, 0.1f, 0.0f);
 
-        //    }
+        }
+        if (Input.GetKeyUp(KeyCode.Keypad3))
+        {
+            GameObject ChargedThree = FireBullets(Charged3);
+            projectile3.transform.position = new Vector3(-400.0f, 0.0f, 0);
+            ChargedThree.gameObject.tag = "Clone";
 
-        //}
-        //if (Input.GetKeyUp(KeyCode.Keypad2))
-        //{
-        //    Charged2.enabled = true;
-
-        //    anim.SetBool("Attack", false);
-        //    projectile2.speed.Equals(0.0f);
-        //    projectile2.transform.position = new Vector3(-400.0f, 0.0f, 0);
-        //    projectileSpeed = 0.1f;
-        //    gameObject.GetComponent<MovePlayer>().enabled = true;
-        //    Charged2.transform.position = anim.transform.position + new Vector3(0.9f, 0.1f, 0);
-        //    projectile2.SetBool("isIdle", true);
-        //}
-
-
-
-        //if (Input.GetKeyDown(KeyCode.Keypad3))
-        //{
-
-        //    projectile3.SetBool("isIdle", false);
-        //    anim.SetBool("Attack", true);
-        //    projectile3.enabled = true;
-        //    projectile3.Play("StrongAtk");
-        //    Charged3.enabled = false;
-        //    gameObject.GetComponent<MovePlayer>().facingRight = true;
-        //    gameObject.GetComponent<MovePlayer>().enabled = false;
-        //    gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
-        //    projectile3.transform.position = anim.transform.position + new Vector3(0.9f, 0.1f, 0.0f);
-
-        //}
-        //if (Input.GetKeyUp(KeyCode.Keypad3))
-        //{
-
-        //}
-
-
-
-
-        //Charged3.transform.position += new Vector3(projectileSpeed, 0, 0);
-
-        //Charged2.transform.position += new Vector3(projectileSpeed, 0, 0);
-
+            var clones = GameObject.FindGameObjectsWithTag("Clone");
+            i++;
+            if (i > 10)
+            {
+                foreach (var clone in clones)
+                {
+                    Destroy(clone);
+                }
+                i = 0;
+            }
+            ChargedThree.transform.position = Launcher.transform.position;
+            ChargedThree.GetComponent<Rigidbody2D>().velocity = new Vector2(5, 0);
+            isAttacking = false;
+        }
     }
 
 
