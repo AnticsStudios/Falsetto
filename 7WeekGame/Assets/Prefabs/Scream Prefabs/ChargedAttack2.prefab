@@ -22,9 +22,10 @@ GameObject:
   - component: {fileID: 212715356719148252}
   - component: {fileID: 50037258880689520}
   - component: {fileID: 61021120338393782}
+  - component: {fileID: 114938718600304144}
   m_Layer: 9
   m_Name: ChargedAttack2
-  m_TagString: Projectile
+  m_TagString: MediumAtk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87,6 +88,29 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.6, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &114938718600304144
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1679817599074906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53e707f6a88def6489872800f39c8959, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  strongGlass: {fileID: 0}
+  mediumGlass: {fileID: 0}
+  weakGlass: {fileID: 0}
+  Player: {fileID: 0}
+  Projectile1: []
+  Projectile2: []
+  Projectile3: []
+  ostrongGlass: {fileID: 0}
+  omediumGlass: {fileID: 0}
+  oweakGlass: {fileID: 0}
+  glassAmount: 0
 --- !u!212 &212715356719148252
 SpriteRenderer:
   m_ObjectHideFlags: 1
