@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class Bomb : MonoBehaviour
 {
-    Player player;
+    Player ActualPlayer;
 
     void BlowUp()
     {
-        player.GetComponent<Player>().Dead();
+        ActualPlayer.GetComponent<Player>().Dead();
     }
 
     //Called when an object enters the trigger
     private void OnTriggerEnter (Collider collider)
     {
         //Checks for the player tag
-        if (player.gameObject.tag == "Player")
+        if (ActualPlayer.gameObject.tag == "Player")
         {
             BlowUp();
         }
