@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Randomization : MonoBehaviour
 {
-    public GameObject prefab1, prefab2, prefab3;
+    public GameObject prefab1, prefab2, prefab3, prefab4, prefab5, prefab6;
     private GameObject randomWall;
     public GameObject letsFixTimeBug;
 
@@ -43,6 +43,15 @@ public class Randomization : MonoBehaviour
                     break;
                 case 3:
                     randomWall = Instantiate(prefab3, transform.position, Quaternion.identity) as GameObject;
+                    break;
+                case 4:
+                    randomWall = Instantiate(prefab4, transform.position, Quaternion.identity) as GameObject;
+                    break;
+                case 5:
+                    randomWall = Instantiate(prefab5, transform.position, Quaternion.identity) as GameObject;
+                    break;
+                case 6:
+                    randomWall = Instantiate(prefab6, transform.position, Quaternion.identity) as GameObject;
                     break;
 
             }
