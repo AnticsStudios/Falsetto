@@ -14,6 +14,11 @@ public class PlayGame : MonoBehaviour {
         //on start button press load character selection
         SceneManager.LoadScene("DannysTest");
     }
+    public void menuGame()
+    {
+        //on start button press load character selection
+        SceneManager.LoadScene("main menu");
+    }
 
     // Update is called once per frame
     void Update () {
