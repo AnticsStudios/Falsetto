@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212533014749459478}
   - component: {fileID: 95087521526911606}
   - component: {fileID: 61141160629579866}
+  - component: {fileID: 114498274980281458}
   m_Layer: 0
   m_Name: strongGlass
   m_TagString: Glass3
@@ -36,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1046827560358628}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.18, y: 0.09, z: 0}
+  m_LocalPosition: {x: -20, y: 10.87, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -85,6 +86,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114498274980281458
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1046827560358628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 096bb3f5d6c70a94184a4433aabc193f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollSpeed: -3
+  tileSizeX: 20.35
 --- !u!212 &212533014749459478
 SpriteRenderer:
   m_ObjectHideFlags: 1
