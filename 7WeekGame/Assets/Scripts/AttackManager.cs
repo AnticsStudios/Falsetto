@@ -53,11 +53,11 @@ public class AttackManager : MonoBehaviour {
                 gameObject.GetComponent<MovePlayer>().enabled = false;
                 gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
                 projectile1.transform.position = anim.transform.position + new Vector3(0.9f, 0.1f, 0.0f);
-                if (projectile1.GetFloat("FixedTime") > 1)
-                {
-                    projectile1.enabled = false;
+                //if (projectile1.GetFloat("FixedTime") > 1)
+                //{
+                //    projectile1.enabled = false;
 
-                }
+                //}
             
 
         }
@@ -129,11 +129,6 @@ public class AttackManager : MonoBehaviour {
             gameObject.GetComponent<MovePlayer>().enabled = false;
             gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
             projectile3.transform.position = anim.transform.position + new Vector3(0.9f, 0.1f, 0.0f);
-            if (projectile3.GetFloat("FixedTime") > 1)
-            {
-                projectile3.enabled = false;
-
-            }
 
         }
         if (Input.GetKeyUp(KeyCode.Keypad3))
@@ -146,7 +141,6 @@ public class AttackManager : MonoBehaviour {
             projectileSpeed = 0.1f;
             gameObject.GetComponent<MovePlayer>().enabled = true;
             Charged3.transform.position = anim.transform.position + new Vector3(0.9f, 0.1f, 0);
-            projectile3.SetFloat("StrongAttack", 0);
             projectile3.SetBool("isIdle", true);
         }
 

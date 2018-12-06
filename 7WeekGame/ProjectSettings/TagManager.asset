@@ -11,6 +11,7 @@ TagManager:
   - MediumAtk
   - StrongAtk
   - Glass
+  - projectile3
   layers:
   - Default
   - TransparentFX
@@ -20,8 +21,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Player
+  - Bullet
   - 
   - 
   - 
