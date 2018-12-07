@@ -7,10 +7,6 @@ public class GlassHitDecection : MonoBehaviour
 {
 
     public Animator anim;
-
-    public Animator[] strongGlass;
-    public Animator[] mediumGlass;
-    public Animator[] weakGlass;
     public GameObject Player;
     public GameObject[] Projectile1;
     public GameObject[] Projectile2;

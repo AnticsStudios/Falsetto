@@ -796,7 +796,7 @@ GameObject:
   - component: {fileID: 1857852620}
   m_Layer: 0
   m_Name: SceneLoader
-  m_TagString: Untagged
+  m_TagString: menuButtons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

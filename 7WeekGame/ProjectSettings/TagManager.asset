@@ -20,6 +20,7 @@ TagManager:
   - Bomb1
   - Bomb2
   - Bomb3
+  - menuButtons
   layers:
   - Default
   - TransparentFX

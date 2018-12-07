@@ -18,6 +18,8 @@ public class PlayGame : MonoBehaviour {
     {
         //on start button press load character selection
         SceneManager.LoadScene("main menu");
+        GameObject menu = GameObject.Find("MenuButtons");
+        GameObject menuButtons = Instantiate(menu) as GameObject;
     }
 
     // Update is called once per frame

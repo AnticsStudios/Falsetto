@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
-
+using UnityEngine.UI;
 
 public class LoadSceneScript : MonoBehaviour
 {
@@ -17,6 +16,26 @@ public class LoadSceneScript : MonoBehaviour
     public Animator leaderboard;
     public Animator leaderboardButton;
     public bool isStarted;
+
+    public void Update()
+    {
+
+            startButton = GameObject.Find("Btn_Start").GetComponent<Animator>();
+            settingsButton = GameObject.Find("Btn_Settings").GetComponent<Animator>();
+            quitButton = GameObject.Find("Btn_Quit").GetComponent<Animator>();
+            dialog = GameObject.Find("Btn_Settings").GetComponent<Animator>();
+            divider = GameObject.Find("Panel").GetComponent<Animator>();
+            title = GameObject.Find("Img_Header").GetComponent<Animator>();
+            leaderboard = GameObject.Find("Dlg_Leaderboard").GetComponent<Animator>();
+            leaderboardButton = GameObject.Find("Btn_Leaderboard").GetComponent<Animator>();
+        startButton.GetComponent<Button>().onClick.AddListener(GameObject.Find("SceneLoader").GetComponent<LoadSceneScript>().StartGame);
+        settingsButton.GetComponent<Button>().onClick.AddListener(GameObject.Find("SceneLoader").GetComponent<LoadSceneScript>().OpenSettings);
+        quitButton.GetComponent<Button>().onClick.AddListener(GameObject.Find("SceneLoader").GetComponent<LoadSceneScript>().quitGame);
+        leaderboardButton.GetComponent<Button>().onClick.AddListener(GameObject.Find("SceneLoader").GetComponent<LoadSceneScript>().OpenLeaderboard);
+
+    }
+
+
 
     public void StartGame()
     {
