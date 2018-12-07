@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RandomizationFlip : MonoBehaviour {
+public class RandomizationFlip : MonoBehaviour
+{
 
-    public GameObject prefab1, prefab2, prefab3, prefab4, prefab5, prefab6;
-    private GameObject randomWall;
+    public GameObject prefab1, prefab2, prefab3;
+    public GameObject randomWall;
     public GameObject letsFixTimeBug;
 
     public float spawnRate = 13.5f;
@@ -17,15 +18,15 @@ public class RandomizationFlip : MonoBehaviour {
         letsFixTimeBug = GameObject.FindGameObjectWithTag("TimeBugFixer");
         nextSpawner = -letsFixTimeBug.GetComponent<timebugfix>().unusableMenuTime;
     }
-    int whatToSpawn;
+    public int whatToSpawn;
 
     private void Update()
     {
         if (Time.time - nextSpawner > nextSpawn)
         {
-            whatToSpawn = Random.Range(1, 6);
-            Debug.Log(whatToSpawn);
-            Debug.Log("rand_F");
+            whatToSpawn = Random.Range(1, 3);
+            // Debug.Log(whatToSpawn);
+            // Debug.Log("rand_F");
             Destroy(randomWall);
 
             switch (whatToSpawn)
@@ -40,18 +41,9 @@ public class RandomizationFlip : MonoBehaviour {
                 case 3:
                     randomWall = Instantiate(prefab3, transform.position, Quaternion.identity) as GameObject;
                     break;
-                case 4:
-                    randomWall = Instantiate(prefab4, transform.position, Quaternion.identity) as GameObject;
-                    break;
-                case 5:
-                    randomWall = Instantiate(prefab5, transform.position, Quaternion.identity) as GameObject;
-                    break;
-                case 6:
-                    randomWall = Instantiate(prefab6, transform.position, Quaternion.identity) as GameObject;
-                    break;
+
 
             }
-
             randomWall.transform.Rotate(0f, 180f, 180f);
 
 
