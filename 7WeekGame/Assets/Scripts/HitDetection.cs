@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GlassHitDecection : MonoBehaviour
+public class HitDetection : MonoBehaviour
 {
 
     public Animator anim;
@@ -21,10 +21,9 @@ public class GlassHitDecection : MonoBehaviour
     public GameObject[] oweakBomb;
 
     void Start()
-
     {
         Player = GameObject.FindGameObjectWithTag("Player");
-
+        anim = Player.GetComponent<Animator>();
     }
     void Update()
     {

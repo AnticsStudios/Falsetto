@@ -25,8 +25,8 @@ GameObject:
   - component: {fileID: 114762256169787324}
   - component: {fileID: 61745127811024258}
   - component: {fileID: 50306838039378234}
-  - component: {fileID: 114595734380895600}
   - component: {fileID: 114707568798466680}
+  - component: {fileID: 114222321497353396}
   m_Layer: 8
   m_Name: ActualPlayer
   m_TagString: Player
@@ -303,10 +303,12 @@ MonoBehaviour:
   Charged1: {fileID: 1916795382343614, guid: 8c770a9063aec6b4dbdd791d2472c576, type: 2}
   Charged2: {fileID: 1679817599074906, guid: 1bddce63d39f81a4aa412a8bfa928cde, type: 2}
   Charged3: {fileID: 1662361063623824, guid: 1498b00e7a1bb114185f85b1449f1bdc, type: 2}
-  ActualPlayer: {fileID: 4471324928735240}
+  cloneTracker: []
   Launcher: {fileID: 4953641193795732}
   isAttacking: 0
---- !u!114 &114595734380895600
+  deathTime: 10
+  timer: 0
+--- !u!114 &114222321497353396
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -317,21 +319,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53e707f6a88def6489872800f39c8959, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 95838813763363858}
-  glasses: {fileID: 0}
-  strongGlass: []
-  mediumGlass: []
-  weakGlass: []
+  anim: {fileID: 0}
   Player: {fileID: 0}
-  Projectile1:
-  - {fileID: 0}
-  Projectile2:
-  - {fileID: 0}
-  Projectile3:
-  - {fileID: 0}
+  Projectile1: []
+  Projectile2: []
+  Projectile3: []
   ostrongGlass: []
   omediumGlass: []
   oweakGlass: []
+  ostrongBomb: []
+  omediumBomb: []
+  oweakBomb: []
 --- !u!114 &114707568798466680
 MonoBehaviour:
   m_ObjectHideFlags: 1
