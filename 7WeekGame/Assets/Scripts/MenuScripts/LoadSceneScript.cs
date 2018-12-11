@@ -46,7 +46,6 @@ public class LoadSceneScript : MonoBehaviour
     {
         //on start button press load character selection
         SceneManager.LoadScene("CharacterSelect");
-        isStarted = true;
     }
 
 
