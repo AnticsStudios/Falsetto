@@ -4,15 +4,26 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayGame : MonoBehaviour {
+    public GameObject TimeBug;
 
-	// Use this for initialization
-	void Start () {
-		
+
+    // Use this for initialization
+    void Start () {
+
 	}
+    void Update()
+    {
+        Scene currentScene = SceneManager.GetActiveScene();
+        if (currentScene.name == "main menu")
+        {
+            TimeBug = GameObject.Find("SceneLoader");
+        }
+    }
     public void StartGame()
     {
         //on start button press load character selection
         SceneManager.LoadScene("DannysTest");
+        TimeBug.GetComponent<LoadSceneScript>().isStarted = true;
     }
     public void menuGame()
     {
@@ -23,7 +34,5 @@ public class PlayGame : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update () {
-		
-	}
+
 }
