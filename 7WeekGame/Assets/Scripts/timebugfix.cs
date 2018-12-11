@@ -19,7 +19,9 @@ public class timebugfix : MonoBehaviour {
         if (loaderObject.GetComponent<LoadSceneScript>().isStarted != true)
         {
             unusableMenuTime = Time.time;
+
         }
+
 
     }
 }
