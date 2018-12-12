@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RandomizeGlass : MonoBehaviour {
 
@@ -10,7 +11,7 @@ public class RandomizeGlass : MonoBehaviour {
 
     public float spawnRate = 13.5f;
     float nextSpawn = 0f;
-    //private float nextSpawner;
+    private float nextSpawner;
     private void Start()
     {
         //    nextSpawn = -gameObject.GetComponent<LoadSceneScript>().unusableMenuTime;
@@ -21,30 +22,35 @@ public class RandomizeGlass : MonoBehaviour {
 
     private void Update()
     {
-        if (Time.time > nextSpawn)
+        Scene currentScene = SceneManager.GetActiveScene();
+        if (currentScene.name == "DannysTest")
         {
-            whatToSpawn = Random.Range(1, 3);
-           // Debug.Log(whatToSpawn);
-           // Debug.Log("rand_G");
-            Destroy(randomGlass);
-
-            switch (whatToSpawn)
+            nextSpawner = Time.time;
+            if (nextSpawner > nextSpawn)
             {
-                case 1:
-                    randomGlass = Instantiate(prefab1, transform.position, Quaternion.identity) as GameObject;
-                    break;
+                whatToSpawn = Random.Range(1, 3);
+                // Debug.Log(whatToSpawn);
+                // Debug.Log("rand_G");
+                Destroy(randomGlass);
 
-                case 2:
-                    randomGlass = Instantiate(prefab2, transform.position, Quaternion.identity) as GameObject;
-                    break;
-                case 3:
-                    randomGlass = Instantiate(prefab3, transform.position, Quaternion.identity) as GameObject;
-                    break;
+                switch (whatToSpawn)
+                {
+                    case 1:
+                        randomGlass = Instantiate(prefab1, transform.position, Quaternion.identity) as GameObject;
+                        break;
+
+                    case 2:
+                        randomGlass = Instantiate(prefab2, transform.position, Quaternion.identity) as GameObject;
+                        break;
+                    case 3:
+                        randomGlass = Instantiate(prefab3, transform.position, Quaternion.identity) as GameObject;
+                        break;
 
 
+                }
+                randomGlass.GetComponent<ScrollingBackground>().enabled = true;
+                nextSpawn = nextSpawner + spawnRate;
             }
-            randomGlass.GetComponent<ScrollingBackground>().enabled = true;
-            nextSpawn = Time.time + spawnRate;
         }
 
     }
