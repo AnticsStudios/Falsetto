@@ -30,7 +30,7 @@ public class Randomization : MonoBehaviour
         if (currentScene.name == "DannysTest")
         {
             nextSpawner = Time.time;
-            if ((nextSpawner /*+ unusabletime*/)< nextSpawn)
+            if (nextSpawner /*+ unusabletime*/> nextSpawn)
             {
                 whatToSpawn = Random.Range(1, 3);
                 //  Debug.Log("rand");
