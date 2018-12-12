@@ -17,7 +17,7 @@ using UnityEngine;
 
 public class AttackManager : MonoBehaviour
 {
-    Animator anim;
+    private Animator anim;
     public Animator projectile1;
     public Animator projectile2;
     public Animator projectile3;
@@ -26,10 +26,10 @@ public class AttackManager : MonoBehaviour
     public GameObject Charged3;
     public GameObject[] cloneTracker;
     public Transform Launcher;
-    public bool isAttacking = false;
-    public float deathTime = 5.0f;
-    public float timer;
-    bool isHoldingKey;
+    private bool isAttacking = false;
+    private float deathTime = 5.0f;
+    private float timer;
+    private bool isHoldingKey;
 
     void Start()
     {
@@ -37,7 +37,7 @@ public class AttackManager : MonoBehaviour
 
     }
 
-
+    //instantiate bullets function, returns a game object
     GameObject FireBullets(GameObject name)
     {
 
@@ -46,9 +46,9 @@ public class AttackManager : MonoBehaviour
 
     }
 
-
-
-    public void cleanClones()
+    
+    //we need to clean specific clones.....
+ private void cleanClones()
     {
         var clones = GameObject.FindGameObjectsWithTag("WeakAtk");
 
@@ -59,7 +59,7 @@ public class AttackManager : MonoBehaviour
 
     }
 
-    public void cleanClones2()
+    private void cleanClones2()
     {
         var clones = GameObject.FindGameObjectsWithTag("MediumAtk");
 
@@ -70,7 +70,7 @@ public class AttackManager : MonoBehaviour
 
     }
 
-    public void cleanClones3()
+    private void cleanClones3()
     {
         var clones = GameObject.FindGameObjectsWithTag("StrongAtk");
 
@@ -81,7 +81,7 @@ public class AttackManager : MonoBehaviour
 
     }
 
-    void Update()
+    private void Update()
     {
 
         if (Input.anyKey)
@@ -124,13 +124,14 @@ public class AttackManager : MonoBehaviour
         }
 
 
-
+        //if the player is not holding a key, they are not attacking and we do some boolean checking to prevent glitches with the animations
         if (Input.anyKey != true)
         {
             anim.SetBool("Attack", false);
             isHoldingKey = false;
         }
 
+        //if the are holding key down, they are charging and engaging the animation 
         if (Input.GetKeyDown(KeyCode.Keypad1))
         {
 
@@ -138,15 +139,16 @@ public class AttackManager : MonoBehaviour
             projectile1.SetBool("failedToCharge", false);
             projectile1.SetBool("isIdle", false);
             projectile1.transform.position = Launcher.transform.position;
-            
-        }
 
+        }
+        //once they let go - execute 2 cases
         if (Input.GetKeyUp(KeyCode.Keypad1))
         {
-
+            //if they held the key for the animation time allow release
             if (timer >= 0.25f)
             {
                 projectile1.SetBool("isIdle", true);
+                projectile1.SetBool("failedToCharge", false);
                 projectile1.transform.position = new Vector3(-400.0f, 0.0f, 0);
                 GameObject Charged = FireBullets(Charged1);
                 Charged.gameObject.tag = "WeakAtk";
@@ -155,9 +157,10 @@ public class AttackManager : MonoBehaviour
                 Charged.GetComponent<Rigidbody2D>().velocity = new Vector2(5, 0);
 
                 isAttacking = false;
-                Invoke("cleanClones", 10);
+                Invoke("cleanClones", 5);
                 timer = 0;
             }
+            //if they let go early, punish them and reset the time!!
             if ((timer < 0.32f) && (isHoldingKey == false))
             {
                 isAttacking = false;
@@ -166,7 +169,7 @@ public class AttackManager : MonoBehaviour
                 timer = 0;
             }
         }
-
+        //once you know one... you know them all, it is copy+paste from here on out
         if (Input.GetKeyDown(KeyCode.Keypad2))
         {
             isAttacking = true;
@@ -183,6 +186,7 @@ public class AttackManager : MonoBehaviour
             {
                 projectile2.transform.position = new Vector3(-400.0f, 0.0f, 0);
                 projectile2.SetBool("isIdle", true);
+                projectile2.SetBool("failedToCharge", false);
                 GameObject ChargedTwo = FireBullets(Charged2);
                 ChargedTwo.gameObject.tag = "MediumAtk";
 
@@ -190,11 +194,12 @@ public class AttackManager : MonoBehaviour
                 ChargedTwo.GetComponent<Rigidbody2D>().velocity = new Vector2(5, 0);
 
                 isAttacking = false;
-                Invoke("cleanClones2", 10);
+                Invoke("cleanClones2", 5);
                 timer = 0;
             }
-            else if((timer < 0.35f) && (isHoldingKey == false))
+            else if ((timer < 0.35f) && (isHoldingKey == false))
             {
+
                 isAttacking = false;
                 projectile2.SetBool("failedToCharge", true);
                 projectile2.SetBool("isIdle", true);
@@ -215,6 +220,7 @@ public class AttackManager : MonoBehaviour
             {
                 projectile3.transform.position = new Vector3(-400.0f, 0.0f, 0);
                 projectile3.SetBool("isIdle", true);
+                projectile1.SetBool("failedToCharge", false);
                 GameObject ChargedThree = FireBullets(Charged3);
                 ChargedThree.gameObject.tag = "StrongAtk";
 
@@ -222,10 +228,10 @@ public class AttackManager : MonoBehaviour
                 ChargedThree.GetComponent<Rigidbody2D>().velocity = new Vector2(5, 0);
 
                 isAttacking = false;
-                Invoke("cleanClones3", 10);
+                Invoke("cleanClones3", 5);
                 timer = 0;
             }
-            else if(timer < .45f && (isHoldingKey == false))
+            else if (timer < .45f && (isHoldingKey == false))
             {
                 isAttacking = false;
                 projectile3.SetBool("failedToCharge", true);

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -31,23 +32,35 @@ public class Score : MonoBehaviour {
         }
         else
         {
-            PlayerPrefs.SetInt("playerTotalScore", 10);
+            PlayerPrefs.SetInt("playerTotalScore", 0);
         }
-        letsFixTimeBug = GameObject.FindGameObjectWithTag("TimeBugFixer");
-        timeScore = -letsFixTimeBug.GetComponent<timebugfix>().unusableMenuTime;
+
     }
 
     void Update()
     {
 
-        //print UI to screen
-        playerScoreUI.gameObject.GetComponent<Text>().text = ("Score: " + playerScore);
-        PlayerPrefs.SetFloat("playerTotalScore", playerScore);
-        Debug.DrawLine(scoreDetection.position, Vector2.down);
+        Scene currentScene = SceneManager.GetActiveScene();
+        if (currentScene.name == "DannysTest")
+        {
+            //print UI to screen
+            playerScoreUI.gameObject.GetComponent<Text>().text = ("Score: " + playerScore);
+            PlayerPrefs.SetFloat("playerTotalScore", playerScore);
+            Debug.DrawLine(scoreDetection.position, Vector2.down);
 
-        RaycastHit2D scoreInfo = Physics2D.Raycast(scoreDetection.position, Vector2.down, distance);
+            RaycastHit2D scoreInfo = Physics2D.Raycast(scoreDetection.position, Vector2.down, distance);
 
-         playerScore = (int)Time.time + (int)timeScore;
+            playerScore = (int)Time.deltaTime + (int)timeScore;
+            letsFixTimeBug = GameObject.FindGameObjectWithTag("BackGround");
+            letsFixTimeBug.GetComponent<ScrollingBackground>().enabled = true;
+        }
+        else
+        {
+            letsFixTimeBug = GameObject.FindGameObjectWithTag("BackGround");
+            letsFixTimeBug.GetComponent<ScrollingBackground>().enabled = false;
+        }
+
+
     }
 
 

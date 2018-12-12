@@ -6,22 +6,22 @@ public class RandomizeGlass : MonoBehaviour {
 
     public GameObject prefab1, prefab2, prefab3;
     public GameObject randomGlass;
-    public GameObject letsFixTimeBug;
+    //public GameObject letsFixTimeBug;
 
     public float spawnRate = 13.5f;
     float nextSpawn = 0f;
-    private float nextSpawner;
+    //private float nextSpawner;
     private void Start()
     {
         //    nextSpawn = -gameObject.GetComponent<LoadSceneScript>().unusableMenuTime;
-        letsFixTimeBug = GameObject.FindGameObjectWithTag("TimeBugFixer");
-        nextSpawner = -letsFixTimeBug.GetComponent<timebugfix>().unusableMenuTime;
+        //letsFixTimeBug = GameObject.FindGameObjectWithTag("TimeBugFixer");
+        //nextSpawner = -letsFixTimeBug.GetComponent<timebugfix>().unusableMenuTime;
     }
     public int whatToSpawn;
 
     private void Update()
     {
-        if (Time.time - nextSpawner > nextSpawn)
+        if (Time.time > nextSpawn)
         {
             whatToSpawn = Random.Range(1, 3);
            // Debug.Log(whatToSpawn);
@@ -43,7 +43,7 @@ public class RandomizeGlass : MonoBehaviour {
 
 
             }
-
+            randomGlass.GetComponent<ScrollingBackground>().enabled = true;
             nextSpawn = Time.time + spawnRate;
         }
 

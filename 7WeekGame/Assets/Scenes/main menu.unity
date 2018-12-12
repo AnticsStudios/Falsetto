@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.45023537, g: 0.5002677, b: 0.5753737, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1567,8 +1567,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1310331526}
-  - component: {fileID: 1310331525}
   - component: {fileID: 1310331527}
+  - component: {fileID: 1310331525}
   m_Layer: 0
   m_Name: TimeBugFix
   m_TagString: TimeBugFixer

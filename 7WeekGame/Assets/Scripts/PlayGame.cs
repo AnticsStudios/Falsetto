@@ -4,13 +4,21 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayGame : MonoBehaviour {
+
+
+    public GameObject Game;
     public GameObject TimeBug;
-
-
+    private Object[] allObjects;
+    //public Scene DannysTest;
     // Use this for initialization
     void Start () {
+        TimeBug = GameObject.FindGameObjectWithTag("TimeBugFixer");
+        //Game = GameObject.FindGameObjectWithTag("Game");
+        allObjects = Object.FindObjectsOfType<GameObject>();
+    }
 
-	}
+
+
     void Update()
     {
         Scene currentScene = SceneManager.GetActiveScene();
@@ -21,7 +29,13 @@ public class PlayGame : MonoBehaviour {
     }
     public void StartGame()
     {
-        //on start button press load character selection
+        //on start button press load character selectio
+        //foreach (GameObject Game in allObjects)
+      //  {
+            //Game.SetActive(true);
+            //DontDestroyOnLoad(Game);
+       // }
+
         SceneManager.LoadScene("DannysTest");
         TimeBug.GetComponent<LoadSceneScript>().isStarted = true;
     }

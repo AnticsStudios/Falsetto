@@ -60,13 +60,15 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1761864302737984}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 096bb3f5d6c70a94184a4433aabc193f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   scrollSpeed: -3
   tileSizeX: 40.7
+  letsFixTimeBug: {fileID: 0}
+  unusabletime: 0
 --- !u!212 &212228138885412726
 SpriteRenderer:
   m_ObjectHideFlags: 1

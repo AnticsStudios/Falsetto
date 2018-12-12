@@ -21,6 +21,7 @@ TagManager:
   - Bomb2
   - Bomb3
   - menuButtons
+  - BackGround
   layers:
   - Default
   - TransparentFX
