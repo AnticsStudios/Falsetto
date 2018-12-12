@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4972249386262934}
   - component: {fileID: 82475570593650242}
+  - component: {fileID: 114485687546416606}
   - component: {fileID: 82683115083918994}
   m_Layer: 0
   m_Name: SoundManager
@@ -231,3 +232,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &114485687546416606
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1163777016079742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8931eccc7bc3c40488fc361b8f0fca3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EffectsSource: {fileID: 0}
+  MusicSource: {fileID: 0}
+  PlayerAttack1: {fileID: 0}
+  PlayerAttack2: {fileID: 0}
+  PlayerAttack3: {fileID: 0}
+  Death: {fileID: 0}
+  Glass1: {fileID: 0}
+  Glass2: {fileID: 0}
+  Glass3: {fileID: 0}
+  Explosion: {fileID: 0}
+  Wall: {fileID: 0}

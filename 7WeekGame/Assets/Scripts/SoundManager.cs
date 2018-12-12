@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,14 +10,16 @@ public class SoundManager : MonoBehaviour
     //  Use this for initialization
     public AudioSource EffectsSource;
     public AudioSource MusicSource;
+    public AudioClip PlayerAttack1;
+    public AudioClip PlayerAttack2;
+    public AudioClip PlayerAttack3;
     public AudioClip Death;
-    public AudioClip GlassCollision;
-    public AudioClip Attack1;
-    public AudioClip Attack2;
-    public AudioClip Attack3;
-    public AudioClip WallCollision;
+    public AudioClip Glass1;
+    public AudioClip Glass2;
+    public AudioClip Glass3;
     public AudioClip Explosion;
-   
+    public AudioClip Wall;
+
 
     public void Awake()
     {
@@ -38,6 +41,7 @@ public class SoundManager : MonoBehaviour
         {
         MusicSource.Play();
         }
+
 }
 
 

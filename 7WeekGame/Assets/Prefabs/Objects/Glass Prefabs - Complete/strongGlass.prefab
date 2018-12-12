@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 61141160629579866}
   - component: {fileID: 114498274980281458}
   - component: {fileID: 114603371705978604}
+  - component: {fileID: 82345221866262568}
   m_Layer: 0
   m_Name: strongGlass
   m_TagString: Glass3
@@ -38,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1046827560358628}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20, y: 10.87, z: 0}
+  m_LocalPosition: {x: 2.96, y: -2.23, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -60,7 +61,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.16, y: 2.32}
+    oldSize: {x: 2.23, y: 2.46}
     newSize: {x: 2.23, y: 2.46}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -69,6 +70,102 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.16, y: 2.32}
   m_EdgeRadius: 0
+--- !u!82 &82345221866262568
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1046827560358628}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 243897814917351624, guid: 9bbba92534b98874498838fde8f94b00,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 3676817fb3e0b8a429278c7b1ecb8b08, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 3
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 0
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!95 &95087521526911606
 Animator:
   serializedVersion: 3
@@ -93,13 +190,15 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1046827560358628}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 096bb3f5d6c70a94184a4433aabc193f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   scrollSpeed: -3
   tileSizeX: 20.35
+  letsFixTimeBug: {fileID: 0}
+  unusabletime: 0
 --- !u!114 &114603371705978604
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -111,6 +210,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed8773e04d80e4947bc70ce6431d0f94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Glass1: {fileID: 8300000, guid: 3676817fb3e0b8a429278c7b1ecb8b08, type: 3}
+  EffectsSource: {fileID: 0}
 --- !u!212 &212533014749459478
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -146,7 +247,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 71afd2037ef01144486ac454a97da8ca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -154,6 +255,6 @@ SpriteRenderer:
   m_Size: {x: 2.23, y: 2.46}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0

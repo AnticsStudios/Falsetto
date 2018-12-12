@@ -30,6 +30,15 @@ public class AttackManager : MonoBehaviour
     private float deathTime = 5.0f;
     private float timer;
     private bool isHoldingKey;
+    private bool isHoldingAttackKey;
+    public AudioSource EffectsSource;
+    public AudioSource MusicSource;
+    public AudioClip PlayerAttack1;
+    public AudioClip PlayerAttack2;
+    public AudioClip PlayerAttack3;
+
+
+
 
     void Start()
     {
@@ -118,6 +127,7 @@ public class AttackManager : MonoBehaviour
                 else
                 {
                     gameObject.GetComponent<MovePlayer>().enabled = true;
+                    isHoldingAttackKey = false;
                 }
             }
 
@@ -131,7 +141,7 @@ public class AttackManager : MonoBehaviour
             isHoldingKey = false;
         }
 
-        //if the are holding key down, they are charging and engaging the animation 
+        //if they are holding key down, they are charging and engaging the animation 
         if (Input.GetKeyDown(KeyCode.Keypad1))
         {
 
@@ -145,21 +155,29 @@ public class AttackManager : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Keypad1))
         {
             //if they held the key for the animation time allow release
-            if (timer >= 0.25f)
+            if ((timer >= 0.25f) && isHoldingAttackKey == false)
             {
                 projectile1.SetBool("isIdle", true);
                 projectile1.SetBool("failedToCharge", false);
                 projectile1.transform.position = new Vector3(-400.0f, 0.0f, 0);
+                EffectsSource.clip = PlayerAttack1;
+                EffectsSource.Play();
                 GameObject Charged = FireBullets(Charged1);
                 Charged.gameObject.tag = "WeakAtk";
 
                 Charged.transform.position = Launcher.transform.position;
                 Charged.GetComponent<Rigidbody2D>().velocity = new Vector2(5, 0);
 
+                isHoldingAttackKey = true;
                 isAttacking = false;
                 Invoke("cleanClones", 5);
+
                 timer = 0;
+
+                    
             }
+
+            
             //if they let go early, punish them and reset the time!!
             if ((timer < 0.32f) && (isHoldingKey == false))
             {
@@ -182,8 +200,10 @@ public class AttackManager : MonoBehaviour
         {
 
 
-            if (timer >= 0.35f)
+            if ((timer >= 0.35f) && isHoldingAttackKey == false)
             {
+                EffectsSource.clip = PlayerAttack2;
+                EffectsSource.Play();
                 projectile2.transform.position = new Vector3(-400.0f, 0.0f, 0);
                 projectile2.SetBool("isIdle", true);
                 projectile2.SetBool("failedToCharge", false);
@@ -193,13 +213,16 @@ public class AttackManager : MonoBehaviour
                 ChargedTwo.transform.position = Launcher.transform.position;
                 ChargedTwo.GetComponent<Rigidbody2D>().velocity = new Vector2(5, 0);
 
+                isHoldingAttackKey = true;
                 isAttacking = false;
                 Invoke("cleanClones2", 5);
+
                 timer = 0;
+
+
             }
             else if ((timer < 0.35f) && (isHoldingKey == false))
             {
-
                 isAttacking = false;
                 projectile2.SetBool("failedToCharge", true);
                 projectile2.SetBool("isIdle", true);
@@ -216,8 +239,10 @@ public class AttackManager : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.Keypad3))
         {
-            if (timer >= .45f)
+            if ((timer >= .45f) && isHoldingAttackKey == false)
             {
+                EffectsSource.clip = PlayerAttack3;
+                EffectsSource.Play();
                 projectile3.transform.position = new Vector3(-400.0f, 0.0f, 0);
                 projectile3.SetBool("isIdle", true);
                 projectile1.SetBool("failedToCharge", false);
@@ -227,12 +252,15 @@ public class AttackManager : MonoBehaviour
                 ChargedThree.transform.position = Launcher.transform.position;
                 ChargedThree.GetComponent<Rigidbody2D>().velocity = new Vector2(5, 0);
 
+                isHoldingAttackKey = true;
                 isAttacking = false;
                 Invoke("cleanClones3", 5);
                 timer = 0;
+
             }
             else if (timer < .45f && (isHoldingKey == false))
             {
+
                 isAttacking = false;
                 projectile3.SetBool("failedToCharge", true);
                 projectile3.SetBool("isIdle", true);
