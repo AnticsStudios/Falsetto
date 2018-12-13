@@ -8,24 +8,18 @@ public class PlayGame : MonoBehaviour {
 
     public GameObject Game;
     public GameObject TimeBug;
-    private Object[] allObjects;
     //public Scene DannysTest;
     // Use this for initialization
     void Start () {
         TimeBug = GameObject.FindGameObjectWithTag("TimeBugFixer");
         //Game = GameObject.FindGameObjectWithTag("Game");
-        allObjects = Object.FindObjectsOfType<GameObject>();
     }
 
 
 
     void Update()
     {
-        Scene currentScene = SceneManager.GetActiveScene();
-        if (currentScene.name == "main menu")
-        {
-            TimeBug = GameObject.Find("SceneLoader");
-        }
+
     }
     public void StartGame()
     {
@@ -37,7 +31,6 @@ public class PlayGame : MonoBehaviour {
        // }
 
         SceneManager.LoadScene("DannysTest");
-        TimeBug.GetComponent<LoadSceneScript>().isStarted = true;
     }
     public void menuGame()
     {

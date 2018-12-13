@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DannysTest.unity
     guid: ae26794b340f24c4399fdddd81bd8ce6
+  - enabled: 1
+    path: Assets/Scenes/EndGame.unity
+    guid: 207ee7238da4626449f09bf9ef383754
   m_configObjects: {}

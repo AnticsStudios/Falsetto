@@ -139,6 +139,7 @@ public class AttackManager : MonoBehaviour
         {
             anim.SetBool("Attack", false);
             isHoldingKey = false;
+
         }
 
         //if they are holding key down, they are charging and engaging the animation 
@@ -155,7 +156,7 @@ public class AttackManager : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Keypad1))
         {
             //if they held the key for the animation time allow release
-            if ((timer >= 0.25f) && isHoldingAttackKey == false)
+            if (timer >= 0.18f)
             {
                 projectile1.SetBool("isIdle", true);
                 projectile1.SetBool("failedToCharge", false);
@@ -179,7 +180,7 @@ public class AttackManager : MonoBehaviour
 
             
             //if they let go early, punish them and reset the time!!
-            if ((timer < 0.32f) && (isHoldingKey == false))
+            if ((timer < 0.18f) && (isHoldingKey == false))
             {
                 isAttacking = false;
                 projectile1.SetBool("failedToCharge", true);
@@ -200,7 +201,7 @@ public class AttackManager : MonoBehaviour
         {
 
 
-            if ((timer >= 0.35f) && isHoldingAttackKey == false)
+            if (timer >= 0.25f) 
             {
                 EffectsSource.clip = PlayerAttack2;
                 EffectsSource.Play();
@@ -221,7 +222,7 @@ public class AttackManager : MonoBehaviour
 
 
             }
-            else if ((timer < 0.35f) && (isHoldingKey == false))
+            else if ((timer < 0.25f) && (isHoldingKey == false))
             {
                 isAttacking = false;
                 projectile2.SetBool("failedToCharge", true);
@@ -237,9 +238,10 @@ public class AttackManager : MonoBehaviour
             projectile3.SetBool("isIdle", false);
             projectile3.transform.position = Launcher.transform.position;
         }
+
         if (Input.GetKeyUp(KeyCode.Keypad3))
         {
-            if ((timer >= .45f) && isHoldingAttackKey == false)
+            if (timer >= .35f) 
             {
                 EffectsSource.clip = PlayerAttack3;
                 EffectsSource.Play();
@@ -258,7 +260,7 @@ public class AttackManager : MonoBehaviour
                 timer = 0;
 
             }
-            else if (timer < .45f && (isHoldingKey == false))
+            else if (timer < .35f && (isHoldingKey == false))
             {
 
                 isAttacking = false;

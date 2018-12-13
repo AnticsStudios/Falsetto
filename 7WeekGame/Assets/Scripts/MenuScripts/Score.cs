@@ -11,12 +11,10 @@ public class Score : MonoBehaviour {
     public GameObject playerScoreUI;
     public Transform scoreDetection;
     private float playerScore;
-    private float timeScore;
-    private int speed = 5;
     private float distance = 2;
     public GameObject letsFixTimeBug;
-
-    private double[] highscore = new double[10];
+    public GameObject letsFixTimeBug2;
+    public GameObject letsFixTimeBug3;
     public void scores()
     {
 
@@ -26,6 +24,7 @@ public class Score : MonoBehaviour {
     }
     private void Start()
     {
+        letsFixTimeBug = GameObject.FindGameObjectWithTag("Game");
         if (PlayerPrefs.GetInt("playerTotalScore") != 0)
         {
             playerScore = PlayerPrefs.GetInt("playerTotalScore");
@@ -40,8 +39,8 @@ public class Score : MonoBehaviour {
     void Update()
     {
 
-        Scene currentScene = SceneManager.GetActiveScene();
-        if (currentScene.name == "DannysTest")
+
+        if (letsFixTimeBug.GetComponent<ReadyGame>().started2 == true)
         {
             //print UI to screen
             playerScoreUI.gameObject.GetComponent<Text>().text = ("Score: " + playerScore);
@@ -50,14 +49,17 @@ public class Score : MonoBehaviour {
 
             RaycastHit2D scoreInfo = Physics2D.Raycast(scoreDetection.position, Vector2.down, distance);
 
-            playerScore = (int)Time.deltaTime + (int)timeScore;
-            letsFixTimeBug = GameObject.FindGameObjectWithTag("BackGround");
-            letsFixTimeBug.GetComponent<ScrollingBackground>().enabled = true;
+            playerScore = (int)Time.time - letsFixTimeBug.GetComponent<ReadyGame>().timefloat2;
+            letsFixTimeBug2 = GameObject.FindGameObjectWithTag("BackGround");
+            letsFixTimeBug2.GetComponent<ScrollingBackground>().enabled = true;
+            letsFixTimeBug3.GetComponent<Animator>().enabled = true;
+    
         }
         else
         {
-            letsFixTimeBug = GameObject.FindGameObjectWithTag("BackGround");
-            letsFixTimeBug.GetComponent<ScrollingBackground>().enabled = false;
+            letsFixTimeBug2 = GameObject.FindGameObjectWithTag("BackGround");
+            letsFixTimeBug2.GetComponent<ScrollingBackground>().enabled = false;
+            letsFixTimeBug3.GetComponent<MovePlayer>().enabled = false;
         }
 
 

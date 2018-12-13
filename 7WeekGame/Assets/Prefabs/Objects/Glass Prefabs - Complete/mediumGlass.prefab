@@ -196,7 +196,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Glass1: {fileID: 8300000, guid: 3676817fb3e0b8a429278c7b1ecb8b08, type: 3}
-  EffectsSource: {fileID: 0}
+  EffectsSource: {fileID: 82740591696880102, guid: 063162a942a11e047aec09d86935a29c,
+    type: 2}
 --- !u!114 &114212283255121560
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -1,34 +1,34 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿//using UnityEngine;
+//using System.Collections;
 
-public class ButtonPress: MonoBehaviour
-{
+//public class ButtonPress: MonoBehaviour
+//{
 
-    public AudioSource soundclip;
-    private Rect ButtonLocation;
+//    public AudioSource soundclip;
+//    private Rect ButtonLocation;
 
-    void Start()
-    {
+//    void Start()
+//    {
        
-    }
+//    }
 
 
-    void Update()
-    {
+//    void Update()
+//    {
 
-    }
+//    }
 
-    void OnGUI()
-    {
+//    void OnGUI()
+//    {
         
 
       
-            if (Input.GetMouseButtonDown(0))
-            {
-                soundclip.Play();
-            }
+//            if (Input.GetMouseButtonDown(0))
+//            {
+//                soundclip.Play();
+//            }
 
 
-        }
-    }
+//        }
+//    }
 

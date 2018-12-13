@@ -2,18 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HitDetection : MonoBehaviour
 {
 
 
-    public AudioSource EffectsSource;
-    public AudioSource MusicSource;
     public AudioClip Death;
-    public AudioClip Glass1;
-    public AudioClip Glass2;
-    public AudioClip Glass3;
-    public AudioClip Explosion;
     public AudioClip Wall;
     public Animator anim;
     public GameObject Player;
@@ -40,14 +35,10 @@ public class HitDetection : MonoBehaviour
         {
             Projectile1 = GameObject.FindGameObjectsWithTag("WeakAtk");
         }
-        Projectile2 = GameObject.FindGameObjectsWithTag("MediumAtk");
-        Projectile3 = GameObject.FindGameObjectsWithTag("StrongAtk");
-        oweakGlass = GameObject.FindGameObjectsWithTag("Glass1");
-        omediumGlass = GameObject.FindGameObjectsWithTag("Glass2");
-        ostrongGlass = GameObject.FindGameObjectsWithTag("Glass3");
-        oweakBomb = GameObject.FindGameObjectsWithTag("Bomb1");
-        omediumBomb = GameObject.FindGameObjectsWithTag("Bomb2");
-        ostrongBomb = GameObject.FindGameObjectsWithTag("Bomb3");
+        if(anim.GetBool("Death"))
+        {
+            SceneManager.LoadScene("EndGame");
+        }
 
     }
 
@@ -77,7 +68,6 @@ public class HitDetection : MonoBehaviour
         {
             if (this.gameObject.tag == "WeakAtk")
             {
-                SoundManager.Instance.PlaySingle(Glass2);
                 Animator glass = other.GetComponent<Animator>();
                 glass.SetBool("isIdle", false);
                 Destroy(this.gameObject);
@@ -92,7 +82,6 @@ public class HitDetection : MonoBehaviour
         {
             if (this.gameObject.tag == "MediumAtk")
             {
-                SoundManager.Instance.PlaySingle(Glass2);
                 Animator glass = other.GetComponent<Animator>();
                 glass.SetBool("isIdle", false);
                 Destroy(this.gameObject);
@@ -107,7 +96,6 @@ public class HitDetection : MonoBehaviour
         {
             if (this.gameObject.tag == "StrongAtk")
             {
-                SoundManager.Instance.PlaySingle(Glass2);
                 Animator glass = other.GetComponent<Animator>();
                 glass.SetBool("isIdle", false);
                 Destroy(this.gameObject);
@@ -135,7 +123,6 @@ public class HitDetection : MonoBehaviour
             {
                 Animator bomb = other.GetComponent<Animator>();
                 bomb.SetBool("Bomb", true);
-                SoundManager.Instance.PlaySingle(Explosion);
             }
             else if ((this.gameObject.tag == "MediumAtk" || this.gameObject.tag == "StrongAtk"))
             {
@@ -150,7 +137,6 @@ public class HitDetection : MonoBehaviour
             {
                 Animator bomb = other.GetComponent<Animator>();
                 bomb.SetBool("Bomb", true);
-                SoundManager.Instance.PlaySingle(Explosion);
             }
             else if ((this.gameObject.tag == "WeakAtk" || this.gameObject.tag == "StrongAtk"))
             {
@@ -165,7 +151,6 @@ public class HitDetection : MonoBehaviour
             {
                 Animator bomb = other.GetComponent<Animator>();
                 bomb.SetBool("Bomb", true);
-                SoundManager.Instance.PlaySingle(Explosion);
 
             }
             else if ((this.gameObject.tag == "MediumAtk" || this.gameObject.tag == "WeakAtk"))

@@ -40,9 +40,12 @@ public class LoadSceneScript : MonoBehaviour
         }
     }
 
+    public void MainMenuGame()
+    {
+        SceneManager.LoadScene("main menu");
+    }
 
-
-    public void StartGame()
+        public void StartGame()
     {
         //on start button press load character selection
         SceneManager.LoadScene("CharacterSelect");
