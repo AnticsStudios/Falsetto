@@ -23,6 +23,7 @@ TagManager:
   - menuButtons
   - BackGround
   - Game
+  - death
   layers:
   - Default
   - TransparentFX

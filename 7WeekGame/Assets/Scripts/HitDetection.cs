@@ -48,14 +48,22 @@ public class HitDetection : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)   // If player hits Heavy glass they Die
     {
 
-            if (this.gameObject.tag == "Player")
-            {
-            if (other.gameObject.tag == "Glass1" || other.gameObject.tag == "Glass2" || other.gameObject.tag == "Glass3" || other.gameObject.tag == "Bomb1" || other.gameObject.tag == "Bomb2" || other.gameObject.tag == "Bomb3")
+        if (this.gameObject.tag == "Player")
+        {
+            if (other.gameObject.tag == "death")
             {
                 anim.SetBool("Death", true);
                 anim.GetComponent<Rigidbody2D>().gravityScale = 1;// (int)9.8;
             }
-            if(other.gameObject.tag == "Glass3" || other.gameObject.tag == "Bomb1" || other.gameObject.tag == "Bomb2" || other.gameObject.tag == "Bomb3")
+        }
+            if (this.gameObject.tag == "Player")
+            {
+            if (other.gameObject.tag == "Glass1" || other.gameObject.tag == "Glass2" || other.gameObject.tag == "Glass3")
+            {
+                anim.SetBool("Death", true);
+                anim.GetComponent<Rigidbody2D>().gravityScale = 1;// (int)9.8;
+            }
+            if(other.gameObject.tag == "Bomb1" || other.gameObject.tag == "Bomb2" || other.gameObject.tag == "Bomb3")
             {
                 anim.SetBool("Death", true);
                 Animator bomb = other.GetComponent<Animator>();

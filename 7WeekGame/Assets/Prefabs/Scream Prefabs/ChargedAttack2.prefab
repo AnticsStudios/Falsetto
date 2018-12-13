@@ -62,7 +62,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &61021120338393782
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -96,21 +96,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1679817599074906}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53e707f6a88def6489872800f39c8959, type: 3}
+  m_Script: {fileID: 11500000, guid: 5e98c639f4581d54b99cfd88081b740c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Death: {fileID: 0}
+  Wall: {fileID: 0}
   anim: {fileID: 0}
-  strongGlass: {fileID: 0}
-  mediumGlass: {fileID: 0}
-  weakGlass: {fileID: 0}
-  Player: {fileID: 0}
+  Player: {fileID: 1002902158267272, guid: b9f4c7d4fd569e64e9b9b02ab19834c0, type: 2}
   Projectile1: []
   Projectile2: []
   Projectile3: []
-  ostrongGlass: {fileID: 0}
-  omediumGlass: {fileID: 0}
-  oweakGlass: {fileID: 0}
-  glassAmount: 0
+  ostrongGlass: []
+  omediumGlass: []
+  oweakGlass: []
+  ostrongBomb: []
+  omediumBomb: []
+  oweakBomb: []
 --- !u!212 &212715356719148252
 SpriteRenderer:
   m_ObjectHideFlags: 1

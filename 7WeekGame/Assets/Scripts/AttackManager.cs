@@ -92,7 +92,7 @@ public class AttackManager : MonoBehaviour
 
     private void Update()
     {
-
+       
         if (Input.anyKey)
         {
             isHoldingKey = true;
@@ -178,7 +178,6 @@ public class AttackManager : MonoBehaviour
                     
             }
 
-            
             //if they let go early, punish them and reset the time!!
             if ((timer < 0.18f) && (isHoldingKey == false))
             {
